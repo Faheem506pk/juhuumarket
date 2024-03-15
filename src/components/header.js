@@ -101,13 +101,13 @@ export default function Header() {
     <div className="offcanvas-body bg-dark">
       <ul className="nav flex-column">
         <li className="nav-item">
-          <Link to="/">
-            <i className="bi bi-archive" />
-            Wartehallen
+          <Link to="/" className="nav-link">
+            <i className="bi bi-archive me-3" />
+      Wartehallen
             </Link>
         </li>
         <li className="nav-item off-canvas-nav-item">
-        <Link to="Product_overview_page">
+        <Link to="Product_overview_page" className="nav-link">
             <i className="bi bi-p-square me-3" /> Radparksysteme
             </Link>
         </li>
