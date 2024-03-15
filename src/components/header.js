@@ -1,7 +1,35 @@
 import { Link, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function Header() {
   const location = useLocation();
+  const [offcanvasOpen, setOffcanvasOpen] = useState(false);
+
+  useEffect(() => {
+    const offcanvasMenu = document.getElementById("offcanvasMenu");
+
+    const closeOffcanvasMenu = () => {
+      setOffcanvasOpen(false);
+    };
+
+    if (offcanvasMenu) {
+      offcanvasMenu.addEventListener("click", closeOffcanvasMenu);
+    }
+
+    return () => {
+      if (offcanvasMenu) {
+        offcanvasMenu.removeEventListener("click", closeOffcanvasMenu);
+      }
+    };
+  }, []);
+
+  const handleOffcanvasToggle = () => {
+    setOffcanvasOpen(!offcanvasOpen);
+  };
+
+  const handleOffcanvasItemClick = () => {
+    setOffcanvasOpen(false);
+  };
 
   return (
     <>
@@ -61,6 +89,7 @@ export default function Header() {
             href="#offcanvasMenu"
             data-bs-toggle="offcanvas"
             className="nav-link"
+            onClick={handleOffcanvasToggle}
           >
             <span className="icon">
               <i className="bi bi-list active" />
@@ -72,8 +101,8 @@ export default function Header() {
     </div>
   </header>
   <div
-    className="offcanvas offcanvas-end"
-    tabIndex={-1}
+    className={`offcanvas offcanvas-end ${offcanvasOpen ? 'show' : ''}`}
+    
     id="offcanvasMenu"
     aria-labelledby="offcanvasMenuLabel"
   >
@@ -95,21 +124,22 @@ export default function Header() {
         type="button"
         style={{ color: "white" }}
         data-bs-dismiss="offcanvas"
+        onClick={handleOffcanvasToggle}
         aria-label="Close"
       />
     </div>
     <div className="offcanvas-body bg-dark">
       <ul className="nav flex-column">
-        <li className="nav-item">
-          <Link to="/" className="nav-link">
+        <li className="nav-item" onClick={handleOffcanvasItemClick}>
+          <Link to="/" className="nav-link" >
             <i className="bi bi-archive me-3"  />
             Wartehallen
             </Link>
         </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
+        <li className="nav-item " onClick={handleOffcanvasItemClick}>
+        <Link to="Product_overview_page" className="nav-link" >
             <i className="bi bi-p-square me-3" /> Radparksysteme
-          </a>
+            </Link>
         </li>
         <li className="nav-item off-canvas-nav-item">
           <a className="nav-link" href="#">
