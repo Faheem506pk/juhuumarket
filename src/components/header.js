@@ -101,15 +101,15 @@ export default function Header() {
     <div className="offcanvas-body bg-dark">
       <ul className="nav flex-column">
         <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">
+          <Link to="/">
             <i className="bi bi-archive" />
             Wartehallen
-          </a>
+            </Link>
         </li>
         <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
+        <Link to="Product_overview_page">
             <i className="bi bi-p-square me-3" /> Radparksysteme
-          </a>
+            </Link>
         </li>
         <li className="nav-item off-canvas-nav-item">
           <a className="nav-link" href="#">
