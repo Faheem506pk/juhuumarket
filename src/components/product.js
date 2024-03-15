@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 
 import ContactForm from "./ContactForm";
 
-
+import ProductsPage from "./productPage";
 export default function Product(){
     return(
 <>
@@ -473,6 +473,8 @@ export default function Product(){
               </button>
             </div>
           </div>
+
+          <ProductsPage/>
           <div className="Analogue pt-5 mt-5" id="Analogue">
             <h1>Analogue</h1>
             <p>

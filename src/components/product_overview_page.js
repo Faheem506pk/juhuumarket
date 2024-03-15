@@ -2,6 +2,8 @@ import { Link, NavLink } from "react-router-dom";
 
 import ContactForm from "./ContactForm";
 
+import ProductsPage from "./productPage";
+
 export default function Product_overview_page(){
     return(
 <>
