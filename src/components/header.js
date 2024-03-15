@@ -102,14 +102,14 @@ export default function Header() {
       <ul className="nav flex-column">
         <li className="nav-item">
           <Link to="/" className="nav-link">
-            <i className="bi bi-archive me-3" />
-      Wartehallen
+            <i className="bi bi-archive me-3"  />
+            Wartehallen
             </Link>
         </li>
         <li className="nav-item off-canvas-nav-item">
-        <Link to="Product_overview_page" className="nav-link">
+          <a className="nav-link" href="#">
             <i className="bi bi-p-square me-3" /> Radparksysteme
-            </Link>
+          </a>
         </li>
         <li className="nav-item off-canvas-nav-item">
           <a className="nav-link" href="#">
@@ -121,105 +121,7 @@ export default function Header() {
             <i className="bi bi-box me-3" /> Other Products
           </a>
         </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
-            {" "}
-            Aktuelles
-          </a>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <div className="accordion nav-link px-0" id="accordionExample">
-            <div className="accordion-item bg-transparent text-white border-0 px-0">
-              <h2 className="accordion-header  bg-transparent">
-                <button
-                  className="accordion-button collapsed bg-transparent text-white px-3 py-2 accordion-button-off off-canvas-accordion"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  Unternehmen
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                className="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div className="accordion-body bg-transparent">
-                  <strong>This is the first item's accordion body.</strong> It
-                  is shown by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a href="#" className="nav-link">
-            Karriere
-          </a>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <div className="accordion  nav-link px-0" id="accordionExample">
-            <div className="accordion-item bg-transparent text-white border-0 px-0">
-              <h2 className="accordion-header bg-transparent">
-                <button
-                  className="accordion-button collapsed bg-transparent text-white px-3 py-2 accordion-button-off off-canvas-accordion"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo"
-                >
-                  Service und Leistungen
-                </button>
-              </h2>
-              <div
-                id="collapseTwo"
-                className="accordion-collapse collapse"
-                data-bs-parent="#accordionExample"
-              >
-                <div className="accordion-body">
-                  <strong>This is the second item's accordion body.</strong> It
-                  is hidden by default, until the collapse plugin adds the
-                  appropriate classes that we use to style each element. These
-                  classes control the overall appearance, as well as the showing
-                  and hiding via CSS transitions. You can modify any of this
-                  with custom CSS or overriding our default variables. It's also
-                  worth noting that just about any HTML can go within the{" "}
-                  <code>.accordion-body</code>, though the transition does limit
-                  overflow.
-                </div>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
-            {" "}
-            DB Bike+Ride-Offensive
-          </a>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
-            {" "}
-            Referenzprojekte
-          </a>
-        </li>
-        <li className="nav-item off-canvas-nav-item">
-          <a className="nav-link" href="#">
-            {" "}
-            Kontakt
-          </a>
-        </li>
+       
       </ul>
     </div>
   </div>
