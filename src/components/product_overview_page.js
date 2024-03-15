@@ -11,7 +11,7 @@ export default function Product_overview_page(){
       <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-          <Link to="/">
+          <Link to="https://juhuu.app/">
               <span>Juhuu</span>
               </Link>
           </li>

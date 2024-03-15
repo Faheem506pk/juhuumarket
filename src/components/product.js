@@ -15,7 +15,7 @@ export default function Product(){
     <nav aria-label="breadcrumb">
         <ol className="breadcrumb">
           <li className="breadcrumb-item">
-          <Link to="/">
+          <Link to="https://juhuu.app/">
               <span>Juhuu</span>
               </Link>
           </li>
