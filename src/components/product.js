@@ -12,6 +12,23 @@ export default function Product(){
   
   <section className="product-details">
     <div className="container">
+    <nav aria-label="breadcrumb">
+        <ol className="breadcrumb">
+          <li className="breadcrumb-item">
+          <Link to="/">
+              <span>Juhuu</span>
+              </Link>
+          </li>
+          <li className="breadcrumb-item">
+          
+            
+              <span>Fahrradparksysteme</span>
+            
+            
+          </li>
+          
+        </ol>
+      </nav>
       <div className="Beschreibung mt-5">
         <h1>Beschreibung</h1>
         <p>
