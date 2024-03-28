@@ -1,70 +1,93 @@
-# Getting Started with Create React App
+# Project README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+This project is a Next.js 14 web application leveraging Server-Side Rendering (SSR) and TypeScript. It's designed to run on Node.js version 20 or higher to ensure compatibility and performance. The application is automatically deployed to DigitalOcean upon any commits to the main branch, which acts as the production branch.
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+- Node.js v20 or higher
+- npm (usually comes with Node.js)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Development Workflow
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Cloning the Repository
 
-### `npm test`
+To start working on the project, clone the repository to your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+git clone <repository-url>
+cd <repository-name>
+```
 
-### `npm run build`
+### Working with Branches
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+For any new features or bug fixes, please create a separate branch:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+git checkout -b feature/<feature-name>
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+or
 
-### `npm run eject`
+```bash
+git checkout -b bugfix/<bug-name>
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This approach ensures that the main branch remains stable and deployment-ready at all times.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installing Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+After cloning the repository and navigating to the project directory, install the required dependencies:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```bash
+npm install
+```
 
-## Learn More
+### Local Development
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can start the development server to see your changes in real-time:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm run dev
+```
 
-### Code Splitting
+This command starts the Next.js development server, allowing you to test your application in a local environment.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Testing Locally Before Merging
 
-### Analyzing the Bundle Size
+Before merging your changes into the main branch, ensure that your application builds correctly with Next.js:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm run build
+```
 
-### Making a Progressive Web App
+This command builds the application for production usage. It's crucial to run this locally to catch any potential build issues before deploying to production.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Merging into Main
 
-### Advanced Configuration
+Once your feature or bugfix is ready and tested locally:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+1. Push your branch to the remote repository:
+
+```bash
+git push origin feature/<feature-name>
+```
+
+2. Create a pull request from your branch to the main branch.
+3. After reviewing and approving the pull request, merge it into the main branch.
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The application is automatically deployed to DigitalOcean when changes are pushed to the main branch. Ensure that your changes are thoroughly tested before merging to avoid deployment issues.
 
-### `npm run build` fails to minify
+## Contribution Guidelines
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Always create a new branch for your work.
+- Test your changes locally before pushing to the main branch.
+- Follow the coding standards and guidelines provided in the project documentation.
+- Ensure your commits are meaningful and describe the changes made.
+
+## Support
+
+For any questions or issues, please open an issue on the GitHub repository, and a project maintainer will assist you.
