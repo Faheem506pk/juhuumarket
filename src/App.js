@@ -4,6 +4,7 @@ import Product_overview_page from './components/product_overview_page';
 import { Routes, Route } from 'react-router-dom';
 import ContactForm from './components/ContactForm';
 import Footer from './components/footer';
+import ProductDetailsPage from './components/ProductDetailsPage';
 
 import './assets/css/style.css';
 
@@ -13,9 +14,9 @@ function App() {
 
     <Header/>
     <Routes>
-    <Route path="/" element={<Product/>} />
-    <Route path="Product_overview_page" element={<Product_overview_page/>} />
-
+    <Route path="/" element={<Product_overview_page/>} />
+    <Route path="/product" element={<Product/>} />
+    <Route path="/product/:productId" element={<ProductDetailsPage />} />
 
 
     </Routes>

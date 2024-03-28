@@ -23,7 +23,7 @@ export default function Footer() {
                 <div className="logo2 text-left">
                   <a href="./index.html">
                     <img
-                      src="./assets/images/juhuu_logo.webp"
+                      src="/assets/img/images/juhuu_logo.webp"
                       alt="Logo"
                       style={{ height: 50, width: "auto" }}
                     />
@@ -170,7 +170,7 @@ export default function Footer() {
                   <i className="text-black" />
                   <a href="https://play.google.com/store/apps/details?id=com.juhuu_bikebox.juhuu">
                     <img
-                      src="./assets/images/google_play_download.webp"
+                      src="/assets/img/images/google_play_download.webp"
                       alt="google_play_download"
                       className="googleplay"
                       style={{ width: 120, height: "auto" }}
@@ -181,7 +181,7 @@ export default function Footer() {
                   <i className="text-black" />
                   <a href="https://apps.apple.com/at/app/juhuu-bikebox/id1603108125">
                     <img
-                      src="./assets/images/app_store_download.webp"
+                      src="/assets/img/images/app_store_download.webp"
                       alt="app_store_download"
                       className="appstore"
                       style={{ width: 120, height: "auto" }}
@@ -211,7 +211,7 @@ export default function Footer() {
                   <i className="text-black" />
                   <a href="https://www.a1.net/">
                     <img
-                      src="./assets/images/a1.webp"
+                      src="/assets/img/images/a1.webp"
                       alt="a1"
                       className="a1"
                       style={{ width: 120, height: "auto" }}

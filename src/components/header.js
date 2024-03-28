@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
+import products from "./data";
 
 export default function Header() {
   const location = useLocation();
+  const params = useParams();
   const [offcanvasOpen, setOffcanvasOpen] = useState(false);
 
   useEffect(() => {
@@ -32,41 +34,36 @@ export default function Header() {
     setOffcanvasOpen(false);
   };
 
+  const isProductPage = products.some((product) => {
+    return location.pathname === `/product/${product.id}`;
+  });
+
   return (
     <>
       {/* header */}
       <header className="d-flex fixed-top align-items-center justify-content-between px-4">
         <div className="brand-nav">
           <a href="/" className="brand">
-            <img src="assets/images/juhuu_logo.webp" alt="logo" />
+            <img src="/assets/img/images/juhuu_logo.webp" alt="logo" />
           </a>
         </div>
         <div className="main-menu">
           <ul className="nav">
+            <li className="nav-item">
+            <a  className="nav-link Responsive-li">
+                <span className="icon">
+                  <i className="bi bi-archive" />
+                </span>{" "}
+                Wartehallen
+              </a>
+            </li>
             <li className="nav-item">
               <Link
                 to="/"
                 className="nav-link Responsive-li"
                 style={{
                   color:
-                    location.pathname === "/" ? "#CD2B23" : "inherit",
-                }}
-              >
-                <span className="icon">
-                  <i className="bi bi-archive" />
-                </span>{" "}
-                Wartehallen
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/Product_overview_page"
-                className="nav-link Responsive-li"
-                style={{
-                  color:
-                    location.pathname === "/Product_overview_page"
-                      ? "#CD2B23"
-                      : "inherit",
+                    location.pathname === "/" || isProductPage ? "#CD2B23" : "inherit",
                 }}
               >
                 <span className="icon">
@@ -76,7 +73,7 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item">
-              <a href="#" className="nav-link Responsive-li">
+              <a  className="nav-link Responsive-li">
                 <span className="icon">
                   <i className="bi bi-lock" />
                 </span>
@@ -148,13 +145,16 @@ export default function Header() {
         <div className="offcanvas-body bg-dark">
           <ul className="nav flex-column">
             <li className="nav-item" onClick={handleOffcanvasItemClick}>
-              <Link to="/" className="nav-link">
+              <a>
                 <i className="bi bi-archive me-3" />
                 Wartehallen
-              </Link>
+              </a>
             </li>
             <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
-              <Link to="Product_overview_page" className="nav-link">
+              <Link to="/" className="nav-link" style={{
+                  color:
+                  location.pathname === "/" || isProductPage ? "#CD2B23" : "inherit",
+                }}>
                 <i className="bi bi-p-square me-3" /> Radparksysteme
               </Link>
             </li>
