@@ -64,7 +64,6 @@ const ContactForm = () => {
           e.target,
           "u2A2El51hkznvTwCJ"
         );
-
         setFormData({
           vorname: "",
           nachname: "",
@@ -242,7 +241,7 @@ const ContactForm = () => {
               <div className="row no-gutters">
                 <div className="col-md-7">
                   <div className="contact-wrap w-100 p-md-5 p-4">
-                    <h4 className="mb-4" id="get-in-touch-sec3-h1">
+                    <h4 className="mb-4 fs-1" id="get-in-touch-sec3-h1">
                       Contact Us
                     </h4>
                     <div id="form-message-warning" className="mb-4">
@@ -257,9 +256,9 @@ const ContactForm = () => {
                     <form onSubmit={handleSubmit}>
                       <div className="row">
                         <div className="col-md-6">
-                          <div className="form-group">
+                          <div className="form-group mb-3">
                             <label
-                              className="label"
+                              className="label fw-bold fs-5 mb-1"
                               htmlFor="vorname"
                               id="get-in-touch-sec3-h1_h1"
                             >
@@ -284,9 +283,9 @@ const ContactForm = () => {
                           </div>
                         </div>
                         <div className="col-md-6">
-                          <div className="form-group">
+                          <div className="form-group mb-3">
                             <label
-                              className="label"
+                              className="label fw-bold fs-5 mb-1"
                               htmlFor="nachname"
                               id="get-in-touch-sec3-h1_h2"
                             >
@@ -311,9 +310,9 @@ const ContactForm = () => {
                           </div>
                         </div>
                         <div className="col-md-6">
-                          <div className="form-group">
+                          <div className="form-group mb-3">
                             <label
-                              className="label"
+                              className="label fw-bold fs-5 mb-1"
                               htmlFor="email"
                               id="get-in-touch-sec3-h1_h4"
                             >
@@ -338,9 +337,9 @@ const ContactForm = () => {
                           </div>
                         </div>
                         <div className="col-md-12">
-                          <div className="form-group">
+                          <div className="form-group mb-3">
                             <label
-                              className="label"
+                              className="label fw-bold fs-5 mb-1"
                               htmlFor="subject"
                               id="get-in-touch-sec3-h1_h4"
                             >
@@ -365,8 +364,8 @@ const ContactForm = () => {
                           </div>
                         </div>
                         <div className="col-md-12">
-                          <div className="form-group">
-                            <label className="label" htmlFor="selectedOptions">
+                          <div className="form-group mb-3">
+                            <label className="label fw-bold fs-5 mb-1" htmlFor="selectedOptions">
                               Products
                             </label>
                             <Form.Select
@@ -386,9 +385,9 @@ const ContactForm = () => {
                         </div>
 
                         <div className="col-md-12">
-                          <div className="form-group">
+                          <div className="form-group mb-3">
                             <label
-                              className="label"
+                              className="label fw-bold fs-5 mb-1"
                               htmlFor="#"
                               id="get-in-touch-sec3-h1_h5"
                             >
@@ -444,7 +443,7 @@ const ContactForm = () => {
                             <input
                               type="submit"
                               defaultValue="ABSENDEN"
-                              className="btn btn-primary mt-3"
+                              className="btn btn-primary mt-2 mb-2"
                               style={{ backgroundColor: "#881BFB !important" }}
                               onclick="sendMail()"
                             />
