@@ -443,8 +443,8 @@ const ContactForm = () => {
                             <input
                               type="submit"
                               defaultValue="ABSENDEN"
-                              className="btn btn-primary mt-2 mb-2"
-                              style={{ backgroundColor: "#881BFB !important" }}
+                              className="btn btn-submit text-white fw-bold mt-2 mb-2"
+                              style={{ backgroundColor: "#7017ff !important" }}
                               onclick="sendMail()"
                             />
                             <div className="submitting" />

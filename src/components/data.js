@@ -201,12 +201,12 @@ const products = [
         "fr": "Le BikeStack est un système de parking à deux niveaux qui offre une efficacité maximale dans les locaux à vélos. Ce système peu encombrant vous permet de doubler la capacité de votre local à vélos sans pour autant renoncer à la sécurité ou au confort."
       },
       "bannerImageDark": [
-        "https://source.unsplash.com/random/440×440/?iot bikestack e-bike",
-        "https://source.unsplash.com/random/440×440/?iot bikestack e-bike",
+        "https://juhuu-production.fra1.digitaloceanspaces.com/products/5c38b9bb1d3ba6f4409cf91/BikeBoxExtension.jpg",
+        "https://juhuu-production.fra1.digitaloceanspaces.com/products/5c38b9bb1d3ba6f4409cf91/BikeBoxExtension.jpg",
       ],
       "bannerImageLight": [
-        "https://source.unsplash.com/random/440×440/?iot bikestack e-bike",
-        "https://source.unsplash.com/random/440×440/?iot bikestack e-bike",
+        "https://juhuu-production.fra1.digitaloceanspaces.com/products/5c38b9bb1d3ba6f4409cf91/BikeBoxExtension.jpg",
+        "https://juhuu-production.fra1.digitaloceanspaces.com/products/5c38b9bb1d3ba6f4409cf91/BikeBoxExtension.jpg",
       ]
     }
   ];
