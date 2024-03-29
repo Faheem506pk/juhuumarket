@@ -50,12 +50,21 @@ const ContactForm = () => {
       const errors = validateForm(formData);
       if (Object.keys(errors).length === 0) {
         // Form is valid, submit data
-        const response = await emailjs.sendForm(
+        await emailjs.sendForm(
           "service_juhuu",
           "template_y4kxt0t",
           e.target,
           "x1CkM_Xgsx3Yo2puh"
         );
+  
+        // Second recipient
+        await emailjs.sendForm(
+          "service_sdrpbke",
+          "template_0bxinnz",
+          e.target,
+          "u2A2El51hkznvTwCJ"
+        );
+
         setFormData({
           vorname: "",
           nachname: "",
