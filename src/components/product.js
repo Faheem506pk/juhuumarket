@@ -1,3 +1,6 @@
+import React, { useState } from 'react';
+
+
 import { Link, useLocation } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import ProductCarousel from "./productPage";
@@ -10,7 +13,7 @@ import "../assets/css/style.css";
 export default function Product() {
   const location = useLocation();
   const product = location.state && location.state.product; // Check if location.state exists
-
+  const [expandedText, setExpandedText] = useState({});
   const chunkArray = (array, size) => {
     const chunkedArr = [];
     let index = 0;
