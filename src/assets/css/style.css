@@ -552,12 +552,30 @@ label.error {
 
 .Carousel-responsive {
   margin: auto;
+  width: 100% !important;
+
+}
+
+@media (max-width: 800px) {
+  .Carousel-responsive {
+    width: 70% !important;
+  }
+
 }
 
 @media (min-width: 1100px) {
   .Carousel-responsive {
     margin: auto;
-    display: none;
+    display: none !important;
+  }
+
+}
+
+@media (min-width: 1100px) {
+  .Digital-Responsive-main {
+    margin: auto;
+    display: flex !important;
+    width: 80%;
   }
 
 }
@@ -580,34 +598,81 @@ label.error {
   }
 
 }
-.carousel-control-prev-responsive
-{
+
+.carousel-control-prev-responsive {
   transform: translateX(80px) !important;
 }
-.carousel-control-next-responsive 
-{
+
+.carousel-control-next-responsive {
   transform: translateX(-80px) !important;
 
 }
 
-.carousel-item-main-img >img{
-display: flex;
 
-}
-.carousel-item-main-img >img{
-width: 400px;
-margin: auto;
+
+
+.cards {
+  margin-bottom: 25px;
 }
 
-.product-section .row
-{
-margin-bottom: 30px;
-}
-
-.card .carousel-image > img
-{
+.G-card .G-carousel-image>img {
   width: 80%;
 }
+
+.carousel-inner {
+  width: 90%;
+}
+
+.Carousel-responsive-detailpage-main {
+  margin: auto;
+  width: 100% !important;
+
+}
+
+@media (max-width: 800px) {
+  .Carousel-responsive-detailpage-main {
+    width: 60% !important;
+  }
+}
+
+@media (min-width: 800px) {
+  .carousel-item-main-img>img {
+    display: flex;
+
+  }
+
+  .carousel-item-main-img>img {
+    width: 400px;
+    margin: auto;
+  }
+}
+
+@media (max-width: 400px) {
+  .Carousel-responsive-detailpage-main {
+    width: 65% !important;
+  }
+
+  .carousel-control-prev-responsive-main {
+    transform: translateX(-50px) !important;
+  }
+
+  .carousel-control-next-responsive-main {
+    transform: translateX(50px) !important;
+  }
+}
+
+@media (min-width: 1100px) {
+  .Carousel-responsive-detailpage-main {
+    margin: auto;
+    /* display: none !important; */
+  }
+}
+
+.card-image {
+  width: 70%;
+  margin: auto;
+}
+
 /***** End Product Overview Page *****/
 
 /***** Product Page js *****/

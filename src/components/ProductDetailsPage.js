@@ -40,6 +40,7 @@ const ProductDetailsPage = () => {
             <span>{product && product.name}</span>
             <span className="h2">{product && product.model}</span>
           </h1>
+          <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
           <div
             id="carouselExampleIndicators3"
             className="carousel slide mt-5  container"
@@ -62,7 +63,7 @@ const ProductDetailsPage = () => {
               ))}
             </div>
             <button
-              className="carousel-control-prev"
+              className="carousel-control-prev carousel-control-prev-responsive-main"
               type="button"
               data-bs-target="#carouselExampleIndicators3"
               data-bs-slide="prev"
@@ -74,7 +75,7 @@ const ProductDetailsPage = () => {
               <span className="visually-hidden">Previous</span>
             </button>
             <button
-              className="carousel-control-next"
+              className="carousel-control-next carousel-control-next-responsive-main"
               type="button"
               data-bs-target="#carouselExampleIndicators3"
               data-bs-slide="next"
@@ -85,6 +86,7 @@ const ProductDetailsPage = () => {
               />
               <span className="visually-hidden">Next</span>
             </button>
+          </div>
           </div>
         </div>
       </section>

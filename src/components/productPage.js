@@ -45,7 +45,7 @@ const ProductCarousel = () => {
   };
 
   return (
-    <div id="carouselExampleIndicators" className="carousel slide mt-5 Carousel-Desktop container" data-bs-interval="false">
+    <div id="carouselExampleIndicators" className="carousel d-flex justify-content-center slide mt-5 Carousel-Desktop container" data-bs-interval="false">
       <div className="carousel-inner">
         {chunkedProducts.map((chunk, index) => (
           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
