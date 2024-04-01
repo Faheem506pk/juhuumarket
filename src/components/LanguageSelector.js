@@ -11,7 +11,7 @@ const LanguageSelector = ({ onChangeLanguage }) => {
 
   return (
     <select value={language} onChange={handleLanguageChange}
-    style={{ marginLeft: 'auto' }}>
+    style={{ marginRight: '40px' }}>
       <option value="en">English</option>
       <option value="de">German</option>
       <option value="fr">French</option>
