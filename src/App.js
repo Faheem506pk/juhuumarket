@@ -1,22 +1,32 @@
-import Product from './components/product';
-import Header from './components/header';
-import Product_overview_page from './components/product_overview_page';
-import { Routes, Route } from 'react-router-dom';
-import ContactForm from './components/ContactForm';
-import Footer from './components/footer';
-import ProductDetailsPage from './components/ProductDetailsPage';
+//App.js
 
-import './assets/css/style.css';
+import React , { useState }from 'react';
+import {  Routes, Route } from 'react-router-dom';
+import ProductOverviewPage from './components/ProductOverviewPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ProductDetailsPage from './components/ProductDetailsPage';
+import { TranslationProvider } from './components/TranslationContext';
+import LanguageSelector from './components/LanguageSelector';
+
 
 
 function App() {
-  return (<div className="App">
+  const [language, setLanguage] = useState("en");
 
+  const handleLanguageChange = (selectedLanguage) => {
+    setLanguage(selectedLanguage);
+  };
+  return (<div className="App">
+<TranslationProvider>
     <Header/>
+    <div>
+    <LanguageSelector onChangeLanguage={handleLanguageChange}  />
+    </div>
     <Routes>
-    <Route path="/" element={<Product_overview_page/>} />
-    <Route path="/product" element={<Product/>} />
-    <Route path="/product/:productId" element={<ProductDetailsPage />} />
+    <Route path="/" element={<ProductOverviewPage language={language} />} />
+    
+    <Route path="/product/:productId" element={<ProductDetailsPage language={language}/>} />
 
 
     </Routes>
@@ -24,11 +34,9 @@ function App() {
     <Footer/>
 
     
+    </TranslationProvider>
     
-    
-    <>
-  
-</>
+   
 </div>
   );
 }

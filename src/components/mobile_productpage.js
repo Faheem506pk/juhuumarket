@@ -5,7 +5,7 @@ import "../assets/css/style.css";
 import products from './data';
 
 
-const Mobileproductpage = () => {
+const Mobileproductpage = ({ language }) => {
   
   const navigate = useNavigate();
 
@@ -60,8 +60,8 @@ const Mobileproductpage = () => {
                       <h5 className="card-title">{product.name}</h5>
                       <p className="card-text flex-grow-1">
                         {expandedText[`${index}-${productIndex}`]
-                          ? product.previewText.en
-                          : limitWords(product.previewText.en, 15)}
+                          ? product.previewText[language]
+                          : limitWords(product.previewText[language], 15)}
                       </p>
                       <div className="mt-auto">
                         {!expandedText[`${index}-${productIndex}`] && (

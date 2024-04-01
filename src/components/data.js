@@ -1,3 +1,6 @@
+//data.js
+
+
 const products = [
     {
       "objectType": "dto",

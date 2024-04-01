@@ -1,21 +1,28 @@
-import React from "react";
+//ProductDetailsPage.js
+
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import ProductCarousel from "./productPage";
-import Productpagegrid from "./productpagegrid";
 import Mobileproductpage from "./mobile_productpage";
-import MobileAnalogueProductCarousel from "./mobile_analogue";
 import products from "./data";
 import "../assets/css/style.css";
 
-const ProductDetailsPage = () => {
+
+
+const ProductDetailsPage = ({language}) => {
   // Access productId from URL params
   const { productId } = useParams();
   // Find the product with the matching ID
   const product = products.find((product) => product.id === productId);
 
+
+
+
+
   return (
     <>
+    
       <section className="main-product-slider">
         {/* Your main product slider section */}
       </section>
@@ -34,12 +41,13 @@ const ProductDetailsPage = () => {
                 {product && product.name}
               </li>
             </ol>
+          
           </nav>
           {/* Product title */}
           <h1 className="h2 product-title">
             <span>{product && product.name}</span>
-            <span className="h2">{product && product.model}</span>
           </h1>
+           
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
           <div
             id="carouselExampleIndicators3"
@@ -125,7 +133,8 @@ const ProductDetailsPage = () => {
                 <div className="col-md-6">
                   <h3>Description</h3>
                   <p>
-                    {product && product.description && product.description.en}
+                  
+                  {product.description[language]}
                   </p>{" "}
                   {/* Assuming "en" is for English */}
                 </div>
@@ -424,13 +433,13 @@ const ProductDetailsPage = () => {
               <h1>Optional Accessories</h1>
 
               <div className="Carousel-Desktop">
-                <ProductCarousel />
+                <ProductCarousel language={language}/>
               </div>
               <div
                 className="Digital-Responsive d-flex flex-column Carousel-responsive"
                 id="digital"
               >
-                <Mobileproductpage />
+                <Mobileproductpage language={language} />
               </div>
             </div>
           </div>

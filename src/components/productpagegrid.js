@@ -1,10 +1,13 @@
+//Productpagegrid.js
+
 import React, { useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
 import "../assets/css/style.css";
+import LanguageSelector from './LanguageSelector';
 import products from './data';
 
-const Productpagegrid = () => {
+const Productpagegrid = ({ language }) => {
   
   const navigate = useNavigate();
   
@@ -30,6 +33,7 @@ const Productpagegrid = () => {
     }
     return text;
   };
+  
 
   return (
     <div className="mt-5 product-section">
@@ -44,8 +48,8 @@ const Productpagegrid = () => {
                 <h5 className="card-title">{product.name}</h5>
                 <p className="card-text flex-grow-1">
                   {expandedText[`${index}`] ?
-                    product.previewText.en :
-                    limitWords(product.previewText.en, 15)}
+                    product.previewText[language] :
+                    limitWords(product.previewText[language], 15)}
                 </p>
                 <div className="mt-auto">
                   {!expandedText[`${index}`] &&
