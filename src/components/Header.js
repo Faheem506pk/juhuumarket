@@ -1,3 +1,4 @@
+
 //Header.js
 
 import React, { useState, useEffect } from "react";
@@ -57,28 +58,15 @@ export default function Header() {
         <div className="main-menu">
           <ul className="nav">
             <li className="nav-item">
-              <a className="nav-link Responsive-li">
-                <span className="icon">
-                  <i className="bi bi-archive" />
-                </span>{" "}
-                Wartehallen
-              </a>
-            </li>
-            <li className="nav-item">
-              <Link
-                to="/"
+            <Link
+                to="https://juhuu.app/"
                 className="nav-link Responsive-li"
-                style={{
-                  color:
-                    location.pathname === "/" || isProductPage
-                      ? "#CD2B23"
-                      : "inherit",
-                }}
+                
               >
                 <span className="icon">
-                  <i className="bi bi-p-square" />
+                  <i className="bi bi-phone" />
                 </span>{" "}
-                Radparksysteme
+                App
               </Link>
             </li>
             <li className="nav-item">
@@ -89,6 +77,58 @@ export default function Header() {
                 Zugangssysteme
               </a>
             </li>
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-link Responsive-li"
+                style={{
+                  color:
+                    location.pathname ===  isProductPage
+                      ? "#CD2B23"
+                      : "inherit",
+                }}
+              >
+                <span className="icon">
+                <i class="bi bi-bicycle"></i>
+                </span>{" "}
+                Bike
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-link Responsive-li"
+                // style={{
+                //   color:
+                //     location.pathname === "/" || isProductPage
+                //       ? "#CD2B23"
+                //       : "inherit",
+                // }}
+              >
+                <span className="icon">
+                <i class="bi bi-scooter"></i>
+                </span>{" "}
+                Scooter
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link
+                to="/"
+                className="nav-link Responsive-li"
+                // style={{
+                //   color:
+                //     location.pathname === "/" || isProductPage
+                //       ? "#CD2B23"
+                //       : "inherit",
+                // }}
+              >
+                <span className="icon">
+                <i class="bi bi-puzzle"></i>
+                </span>{" "}
+                Sconstige
+              </Link>
+            </li>
+            
           </ul>
         </div>
         <div className="main-menu full-main-menu">
@@ -96,9 +136,9 @@ export default function Header() {
             <li className="nav-item">
               <a href="#" className="nav-link Responsive-li">
                 <span className="icon">
-                  <i className="bi bi-journal-bookmark active" />
+                <i class="bi bi-lightbulb"></i>
                 </span>{" "}
-                Bookmarks
+                Use Cases
               </a>
             </li>
             <li className="nav-item">

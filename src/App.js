@@ -21,10 +21,9 @@ function App() {
 <TranslationProvider>
     <Header/>
     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-  <div></div> {/* Left side content */}
-  <LanguageSelector onChangeLanguage={handleLanguageChange}   /> {/* Right side content */}
-</div>
-
+          <div></div> {/* Left side content */}
+          <LanguageSelector onChangeLanguage={handleLanguageChange}  /> {/* Right side content */}
+        </div>
     <Routes>
     <Route path="/" element={<ProductOverviewPage language={language} />} />
     

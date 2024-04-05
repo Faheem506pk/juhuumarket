@@ -456,8 +456,7 @@ export default function Product() {
           <div className="d-flex justify-content-between align-items-center">
             <div className="text-content">
               <h4>
-                <i className="bi bi-newspaper" /> Jetzt zum vierteljährlichen
-                Newsletter anmelden.
+                <i className="bi bi-newspaper" /> Jetzt zum Newsletter anmelden und am laufenden bleibenEvery
               </h4>
             </div>
             <div className="action-btn">

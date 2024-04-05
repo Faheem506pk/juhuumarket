@@ -35,7 +35,7 @@ const ProductDetailsPage = ({language}) => {
                 <a href="https://juhuu.app/">Juhuu</a>
               </li>
               <li className="breadcrumb-item">
-                <a href="/">Fahrradparksysteme</a>
+                <a href="/">App</a>
               </li>
               <li className="breadcrumb-item active">
                 {product && product.name}
@@ -154,7 +154,7 @@ const ProductDetailsPage = ({language}) => {
                     className="accordion"
                     id="accordionPanelsStayOpenExample"
                   >
-                    <div
+                    {/* <div
                       className="accordion-item"
                       style={{ borderTop: "none" }}
                     >
@@ -280,7 +280,7 @@ const ProductDetailsPage = ({language}) => {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                     <div className="accordion-item">
                       <h2 className="accordion-header accordion-button-h">
                         <button
@@ -397,7 +397,7 @@ const ProductDetailsPage = ({language}) => {
                           aria-expanded="false"
                           aria-controls="panelsStayOpen-collapse5"
                         >
-                          Produktunterlagen zum Download
+                          Techische Unterlagen Download
                         </button>
                       </h2>
                       <div
@@ -453,8 +453,7 @@ const ProductDetailsPage = ({language}) => {
           <div className="d-flex justify-content-between align-items-center">
             <div className="text-content">
               <h4>
-                <i className="bi bi-newspaper" /> Jetzt zum vierteljährlichen
-                Newsletter anmelden.
+                <i className="bi bi-newspaper" /> Jetzt zum Newsletter anmelden und am laufenden bleibenEvery
               </h4>
             </div>
             <div className="action-btn">

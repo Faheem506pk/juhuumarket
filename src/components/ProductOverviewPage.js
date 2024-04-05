@@ -31,7 +31,7 @@ export default function Product_overview_page({language}){
           <li className="breadcrumb-item">
           
             
-              <span>Fahrradparksysteme</span>
+              <span>App</span>
             
             
           </li>
@@ -58,15 +58,15 @@ export default function Product_overview_page({language}){
       </div>
       <div className=" row d-flex my-3">
         
-        <div className="mt-3 d-flex justify-content-center responsive-scrollspy">
+        <div className="mt-4 d-flex justify-content-center responsive-scrollspy">
           <a
-            className="btn border border-5 px-5 mx-2 responsive-scrollspy"
+            className="btn btn-primary btn-lg px-5 mx-2 responsive-scrollspy"
             href="#digital"
           >
             Digital
           </a>
           <a
-            className="btn border border-5 px-5 mx-2 responsive-scrollspy"
+            className="btn btn-primary btn-lg px-5 mx-2 responsive-scrollspy"
             href="#Analogue"
           >
             Analogue
@@ -76,12 +76,12 @@ export default function Product_overview_page({language}){
         <nav className="sticky-top d-none d-xxl-block bg-white ">
           <ul className="nav nav-pills nav-fill nav-sideline product-nav ">
             <li className="nav-item ">
-              <a className="nav-link nav-link-in" href="#digital">
+              <a className="btn btn-primary btn-lg btn-block w-75" href="#digital">
                 digital
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link nav-link-in" href="#Analogue">
+              <a className="btn btn-primary btn-lg btn-block w-75" href="#Analogue">
                 Analogue
               </a>
             </li>
@@ -151,8 +151,7 @@ export default function Product_overview_page({language}){
       <div className="d-flex justify-content-between align-items-center">
         <div className="text-content">
           <h4>
-            <i className="bi bi-newspaper" /> Jetzt zum vierteljährlichen
-            Newsletter anmelden.
+            <i className="bi bi-newspaper" /> Jetzt zum Newsletter anmelden und am laufenden bleibenEvery
           </h4>
         </div>
         <div className="action-btn">

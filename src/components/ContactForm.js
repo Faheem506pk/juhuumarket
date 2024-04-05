@@ -113,11 +113,18 @@ const ContactForm = () => {
   const captchaRef = useRef(null); // Create a ref using useRef
 
   return (
-    <section className="ftco-section">
+    <section className="ftco-section pt-5">
       <div className="container">
         <div className="row justify-content-center">
+          <div className="col-md-6 text-center my-5">
+            <h1 className="heading-section display-1" style={{ fontWeight: "bolder" }}>
+              Contact Us
+            </h1>
+          </div>
+        </div>
+        <div className="row justify-content-center">
           <div className="col-md-6 text-center mb-5">
-            <h1 className="heading-section" style={{ fontWeight: "bolder" }}>
+            <h1 className="heading-section" style={{ fontWeight: "bold" }}>
               Kontakt
             </h1>
           </div>
@@ -125,7 +132,7 @@ const ContactForm = () => {
         <div className="row justify-content-center">
           <div className="col-md-12">
             <div className="wrapper">
-              <div className="row mb-5">
+              <div className="row mb-1">
                 <div className="col-md-3">
                   <div className="dbox w-100 text-center">
                     <div className="">
@@ -241,9 +248,9 @@ const ContactForm = () => {
               <div className="row no-gutters">
                 <div className="col-md-7">
                   <div className="contact-wrap w-100 p-md-5 p-4">
-                    <h4 className="mb-4 fs-1" id="get-in-touch-sec3-h1">
+                    {/* <h4 className="mb-4 fs-1" id="get-in-touch-sec3-h1">
                       Contact Us
-                    </h4>
+                    </h4> */}
                     <div id="form-message-warning" className="mb-4">
                       {errorMessage && <p>{errorMessage}</p>}
                     </div>
