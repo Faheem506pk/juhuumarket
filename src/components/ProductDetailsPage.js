@@ -4,6 +4,8 @@ import ContactForm from "./ContactForm";
 import ProductCarousel from "./productPage";
 import Mobileproductpage from "./mobile_productpage";
 import { useNavigate } from 'react-router-dom';
+
+import GLTFViewer from './GLTFViewer';
 import "../assets/css/style.css";
 
 const ProductDetailsPage = ({language}) => {
@@ -61,7 +63,7 @@ const ProductDetailsPage = ({language}) => {
   if (!product) {
     return <div>No data available</div>;
   }
-
+  const gltfUrl = 'Box.gltf';
 
 
   return (
@@ -90,7 +92,12 @@ const ProductDetailsPage = ({language}) => {
           {/* Product title */}
           <h1 className="h2 product-title">
             <span>{product && product.product.name}</span>
+           
+            
           </h1>
+          <div style={{ width: '100vw', height: '100vh' }}>
+      <GLTFViewer url= 'Box.gltf' />
+    </div>
            
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
           <div
