@@ -65,9 +65,7 @@ const Productpagegrid = ({ language }) => {
       </div>
     );
   }
-  if (!product) {
-    return <div>No data available</div>;
-  }
+  
 
   return (
     <div className="mt-5 product-section">
