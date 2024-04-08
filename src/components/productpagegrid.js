@@ -38,16 +38,21 @@ const Productpagegrid = ({ language }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.juhuu.app/v1/products/');
+        const response = await fetch('https://api.juhuu.app/v1/products/', {
+          headers: {
+            'Client-Version': '1.0.156'
+          }
+        });
         const data = await response.json();
         setProducts(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
+  
     fetchData();
-  }, []); // Empty dependency array to fetch data only once when the component mounts
+  }, []);
+   // Empty dependency array to fetch data only once when the component mounts
 
   return (
     <div className="mt-5 product-section">
