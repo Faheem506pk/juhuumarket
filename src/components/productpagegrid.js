@@ -40,7 +40,7 @@ const Productpagegrid = ({ language }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:8080/https://api.juhuu.app/v1/products/', {
+        const response = await fetch('https://api.juhuu.app/v1/products/', {
           headers: {
             'Client-Version': '1.0.156'
           }
