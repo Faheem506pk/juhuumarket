@@ -37,7 +37,8 @@ const ProductDetailsPage = ({language}) => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `https://api.juhuu.app/v1/products/${productId}`
+          `https://api.juhuu.app/v1/products/${productId}`, 
+          
         );
         const data = await response.json();
         setProduct(data);
@@ -48,9 +49,10 @@ const ProductDetailsPage = ({language}) => {
         setIsLoading(false); // Set loading to false in case of error
       }
     };
-
+  
     fetchProduct();
   }, [productId]);
+  
 
   // Render loader if loading
   if (isLoading) {
@@ -100,57 +102,31 @@ const ProductDetailsPage = ({language}) => {
         
            
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
-          <div
-            id="carouselExampleIndicators3"
-            className="carousel slide mt-5  container"
-            data-bs-ride="carousel"
-          >
-            <div className="carousel-inner">
-            <ModelViewer src={modelSrc} />
-
-            {product.product.bannerImageDark.map((image, index) => (
-              
-  <div
-    className={`carousel-item carousel-item-main-img ${
-      index === 0 ? "active" : ""
-    }`}
-    key={index}
-  >
-    <img
-      src={image}
-      className="card-img-top"
-      alt={`Slide ${index}`}
-    />
-  </div>
-))}
-
+      <div id="carouselExampleIndicators3" className="carousel slide container" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          {/* Iterate over images */}
+          {product.product.bannerImageDark.map((image, index) => (
+            <div className={`carousel-item carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
+              {/* If it's the first item, display 3D model, else display image */}
+              {index === 0 ? (
+                <ModelViewer src={modelSrc} />
+              ) : (
+                <img src={image} className="card-img-top" alt={`Slide ${index}`} />
+              )}
             </div>
-            <button
-              className="carousel-control-prev carousel-control-prev-responsive-main"
-              type="button"
-              data-bs-target="#carouselExampleIndicators3"
-              data-bs-slide="prev"
-            >
-              <span
-                className="bi bi-arrow-left-circle-fill text-black fs-1 rounded-5"
-                aria-hidden="true"
-              />
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next carousel-control-next-responsive-main"
-              type="button"
-              data-bs-target="#carouselExampleIndicators3"
-              data-bs-slide="next"
-            >
-              <span
-                className="bi bi-arrow-right-circle-fill text-black fs-1 rounded-5"
-                aria-hidden="true"
-              />
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
-          </div>
+          ))}
+        </div>
+        <button className="carousel-control-prev carousel-control-prev-responsive-main" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
+          <span className="bi bi-arrow-left-circle-fill text-black fs-1 rounded-5" aria-hidden="true" />
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next carousel-control-next-responsive-main" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
+          <span className="bi bi-arrow-right-circle-fill text-black fs-1 rounded-5" aria-hidden="true" />
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
         </div>
       </section>
       {/* Product description and details */}
