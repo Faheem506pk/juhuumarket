@@ -3,7 +3,8 @@ import React, { useState, useRef , useEffect} from "react";
 import emailjs from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import Form from "react-bootstrap/Form";
-
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../assets/css/style.css";
 
 const ContactForm = ({language}) => {
@@ -77,7 +78,7 @@ const ContactForm = ({language}) => {
         setErrorMessage("Please verify that you are human.");
         return;
       }
-
+  
       const errors = validateForm(formData);
       if (Object.keys(errors).length === 0) {
         // Form is valid, submit data
@@ -106,6 +107,8 @@ const ContactForm = ({language}) => {
         captchaRef.current.reset();
         setSuccessMessage("Your email was sent successfully!");
         setErrorMessage("");
+        // Show success toast
+        toast.success("Your email was sent successfully!");
       } else {
         // Form is invalid, display error messages
         setFormErrors(errors);
@@ -113,8 +116,11 @@ const ContactForm = ({language}) => {
     } catch (error) {
       console.error("Error sending email:", error);
       setErrorMessage("An error occurred. Please try again.");
+      // Show error toast
+      toast.error("An error occurred. Please try again.");
     }
   };
+  
 
   const validateForm = (data) => {
     let errors = {};
