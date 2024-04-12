@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "../assets/css/style.css";
 
 const NewsletterSignup = ({ language }) => {
@@ -34,9 +36,11 @@ const NewsletterSignup = ({ language }) => {
       setEmail("");
       setIsChecked(false);
       setErrorMessage("");
+      toast.success("Email sent successfully!");
     } catch (error) {
       console.error("Error sending email:", error);
       setErrorMessage("An error occurred. Please try again.");
+      toast.error("An error occurred. Please try again.");
     }
   };
 
