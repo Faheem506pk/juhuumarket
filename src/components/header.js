@@ -139,7 +139,16 @@ export default function Header() {
         </div>
         <div className="main-menu full-main-menu">
           <ul className="nav">
-          <li className="nav-item">
+          
+            <li className="nav-item">
+              <a href="#" className="nav-link Responsive-li">
+                <span className="icon">
+                  <i className="bi bi-lightbulb"></i>
+                </span>{" "}
+                Use Cases
+              </a>
+            </li>
+            <li className="nav-item">
           <Link to="/filter" className="nav-link Responsive-li "
           style={{
             color:
@@ -154,14 +163,6 @@ export default function Header() {
           Filter
       </Link>
       </li>
-            <li className="nav-item">
-              <a href="#" className="nav-link Responsive-li">
-                <span className="icon">
-                  <i className="bi bi-lightbulb"></i>
-                </span>{" "}
-                Use Cases
-              </a>
-            </li>
             <li className="nav-item">
             </li>
             <div
@@ -246,6 +247,13 @@ export default function Header() {
                 <i className="bi bi-puzzle me-3"></i> Sconstige
               </a>
             </li>
+            
+            
+            <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
+              <a className="nav-link" style={{ color: "white" }}>
+                <i className="bi bi-lightbulb me-3"></i> Use Cases
+              </a>
+            </li>
             <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
             <Link
                 to="/filter" className="nav-link" onClick={() => handleFilter()} style={{ color:
@@ -254,12 +262,6 @@ export default function Header() {
                       : "white", }}>
                 <i className="bi bi-funnel me-3"></i> Filter
               </Link>
-            </li>
-            
-            <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
-              <a className="nav-link" style={{ color: "white" }}>
-                <i className="bi bi-lightbulb me-3"></i> Use Cases
-              </a>
             </li>
           </ul>
         </Offcanvas.Body>
