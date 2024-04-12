@@ -28,6 +28,12 @@ export default function Header() {
     // Scroll to the top of the page
     window.scrollTo(0, 0);
   };
+  const handleFilter = () => {
+    // Redirect to product overview page with product ID in the URL
+    navigate(`/filter`);
+    // Scroll to the top of the page
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -236,13 +242,13 @@ export default function Header() {
               </Link>
             </li>
             <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <a className="nav-link" style={{ color: "white" }}>
                 <i className="bi bi-puzzle me-3"></i> Sconstige
               </a>
             </li>
             <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
             <Link
-                to="/filter" className="nav-link" onClick={() => handleScooter()} style={{ color:
+                to="/filter" className="nav-link" onClick={() => handleFilter()} style={{ color:
                     location.pathname ===  "/filter"
                       ? "#CD2B23"
                       : "white", }}>
@@ -251,7 +257,7 @@ export default function Header() {
             </li>
             
             <li className="nav-item off-canvas-nav-item" onClick={handleOffcanvasItemClick}>
-              <a className="nav-link" href="#" style={{ color: "white" }}>
+              <a className="nav-link" style={{ color: "white" }}>
                 <i className="bi bi-lightbulb me-3"></i> Use Cases
               </a>
             </li>
