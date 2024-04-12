@@ -33,7 +33,7 @@ const Scooterpage = ({language}) =>{
           <li className="breadcrumb-item">
           
             
-              <span>App</span>
+              <span>Scooter</span>
             
             
           </li>

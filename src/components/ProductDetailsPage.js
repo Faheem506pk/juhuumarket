@@ -9,11 +9,12 @@ import ModelViewer from "./ModelViewer";
 import "../assets/css/style.css";
 
 const ProductDetailsPage = ({language}) => {
-  const { productId } = useParams();
+  const { productId, categoryType } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading status
   const [expandedText, setExpandedText] = useState({});
   const navigate = useNavigate();
+  
 
   const toggleExpand = (index) => {
     setExpandedText((prevState) => ({
@@ -67,6 +68,20 @@ const ProductDetailsPage = ({language}) => {
     return <div>No data available</div>;
   }
 
+
+  let breadcrumbText = "";
+  let breadcrumbLink = "";
+  if (categoryType === "Bike") {
+    breadcrumbText = "Bike";
+    breadcrumbLink = "/v1/products/Bike";
+  } else if (categoryType === "Scooter") {
+    breadcrumbText = "Scooter";
+    breadcrumbLink = "/v1/products/Scooter";
+  }
+
+
+
+
   const modelSrc = product.product.model3d;
 
 
@@ -85,7 +100,7 @@ const ProductDetailsPage = ({language}) => {
                 <a href="https://juhuu.app/">Juhuu</a>
               </li>
               <li className="breadcrumb-item">
-                <a href="/">App</a>
+              <a href={breadcrumbLink}>{breadcrumbText}</a>
               </li>
               <li className="breadcrumb-item active">
               {product.product.name}
@@ -108,9 +123,11 @@ const ProductDetailsPage = ({language}) => {
           {product.product.bannerImageDark.map((image, index) => (
             <div className={`carousel-item carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
               {/* If it's the first item, display 3D model, else display image */}
-             
+              {/* {index === 0 ? (
+                <ModelViewer src={modelSrc} />
+              ) : ( */}
                 <img src={image} className="card-img-top" alt={`Slide ${index}`} />
-             
+              {/* )} */}
             </div>
           ))}
         </div>

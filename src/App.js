@@ -31,6 +31,7 @@ function App() {
     <Route path="/" element={<ProductOverviewPage language={language} />} />
     
     <Route path="/v1/products/:productId" element={<ProductDetailsPage language={language}/>} />
+    <Route path="/v1/products/:categoryType/:productId" element={<ProductDetailsPage language={language}/>} />
     <Route path="/v1/products/Bike" element={<Bikepage  language={language} />} />
     <Route path="/v1/products/Scooter" element={<Scooterpage  language={language} />} />
     

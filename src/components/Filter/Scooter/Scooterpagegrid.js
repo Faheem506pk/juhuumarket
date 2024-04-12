@@ -1,3 +1,5 @@
+//Scooterpagegrid.js
+
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useNavigate } from 'react-router-dom';
@@ -11,11 +13,13 @@ const Scooterpagegrid = ({ language }) => {
   const navigate = useNavigate();
 
   const handleBuyNow = (productId) => {
-    // Redirect to product overview page with product ID in the URL
-    navigate(`/v1/products/${productId}`);
+    // Redirect to product overview page with product ID and category type in the URL
+    
+     navigate(`/v1/products/Scooter/${productId}`); // For Scooterpagegrid.js
     // Scroll to the top of the page
     window.scrollTo(0, 0);
   };
+  
 
   const toggleExpand = (index) => {
     setExpandedText((prevState) => ({
