@@ -32,11 +32,11 @@ const NewsletterSignup = ({ language }) => {
         e.target,
         "u2A2El51hkznvTwCJ"
       );
-      setSuccessMessage("Your email was sent successfully!");
+      setSuccessMessage("You have successfully subscribed to the newsletter.!");
       setEmail("");
       setIsChecked(false);
       setErrorMessage("");
-      toast.success("Email sent successfully!");
+      toast.success("You have successfully subscribed to the newsletter.!");
     } catch (error) {
       console.error("Error sending email:", error);
       setErrorMessage("An error occurred. Please try again.");
