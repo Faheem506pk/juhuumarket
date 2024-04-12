@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useParams, useNavigate  } from "react-router-dom";
-import LanguageSelector from './LanguageSelector';
+
 import { useTranslation } from './TranslationContext';
-import Button from 'react-bootstrap/Button';
+
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import FilterIcon from '@mui/icons-material/Filter';
+
 import "../assets/css/style.css";
 
 export default function Header() {

@@ -6,10 +6,24 @@ import Form from "react-bootstrap/Form";
 
 import "../assets/css/style.css";
 
-const ContactForm = () => {
+const ContactForm = ({language}) => {
 
   const [products, setProducts] = useState([]);
+  let firstNameLabel, lastNameLabel, businessLabel, contactLabel, agreementText;
 
+  if (language === "en") {
+    firstNameLabel = "First name";
+    lastNameLabel = "Last name";
+    businessLabel = "Business";
+    contactLabel = "Contact";
+    agreementText = "I agree that my details will be collected and processed to answer my query. Further information can be found in the data protection declaration.";
+  } else if (language === "de") {
+    firstNameLabel = "Vorname";
+    lastNameLabel = "Nachname";
+    businessLabel = "Firma";
+    contactLabel = "Kontakt";
+    agreementText = "Ich stimme zu, dass meine Angaben zur Beantwortung meiner Anfrage erhoben und verarbeitet werden. Weitere Informationen finden Sie in der Datenschutzerklärung.";
+  }
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -135,15 +149,13 @@ const ContactForm = () => {
         <div className="row justify-content-center">
           <div className="col-md-6 text-center my-5">
             <h1 className="heading-section display-1" style={{ fontWeight: "bolder" }}>
-              Contact Us
+            {contactLabel}
             </h1>
           </div>
         </div>
         <div className="row justify-content-center">
           <div className="col-md-6 text-center mb-5">
-            <h1 className="heading-section" style={{ fontWeight: "bold" }}>
-              Kontakt
-            </h1>
+            
           </div>
         </div>
         <div className="row justify-content-center">
@@ -286,7 +298,7 @@ const ContactForm = () => {
                               htmlFor="vorname"
                               id="get-in-touch-sec3-h1_h1"
                             >
-                              Vorname
+                              {firstNameLabel}
                             </label>
                             <input
                               type="text"
@@ -295,7 +307,7 @@ const ContactForm = () => {
                               }`}
                               name="vorname"
                               id="vorname"
-                              placeholder="Vorname"
+                              placeholder={firstNameLabel}
                               value={formData.vorname}
                               onChange={handleChange}
                             />
@@ -313,7 +325,7 @@ const ContactForm = () => {
                               htmlFor="nachname"
                               id="get-in-touch-sec3-h1_h2"
                             >
-                              Nachname
+                              {lastNameLabel}
                             </label>
                             <input
                               type="text"
@@ -322,7 +334,7 @@ const ContactForm = () => {
                               }`}
                               name="nachname"
                               id="nachname"
-                              placeholder="Nachname"
+                              placeholder={lastNameLabel}
                               value={formData.nachname}
                               onChange={handleChange}
                             />
@@ -367,7 +379,7 @@ const ContactForm = () => {
                               htmlFor="subject"
                               id="get-in-touch-sec3-h1_h4"
                             >
-                              Firma
+                              {businessLabel}
                             </label>
                             <input
                               type="text"
@@ -376,7 +388,7 @@ const ContactForm = () => {
                               }`}
                               name="firma"
                               id="firma"
-                              placeholder="Firma"
+                              placeholder={businessLabel}
                               value={formData.firma}
                               onChange={handleChange}
                             />
@@ -475,9 +487,7 @@ const ContactForm = () => {
                           </div>
                         </div>
                         <p id="get-in-touch-sec3-p_p2">
-                          Ich stimme zu, dass meine Angaben zur Beantwortung
-                          meiner Anfrage erhoben und verarbeitet werden. Weitere
-                          Informationen finden Sie in der Datenschutzerklärung.
+                          {agreementText}
                         </p>
                       </div>
                     </form>

@@ -679,6 +679,9 @@ label.error {
   background-color: #7017ff !important;
 }
 /***** End form *****/
+.small {
+  font-size: 0.8rem; /* Adjust the font size as needed */
+}
 
 
 /* HTML: <div class="loader"></div> */

@@ -11,8 +11,7 @@ import LanguageSelector from './components/LanguageSelector';
 import Bikepage from './components/Filter/bike/bikepage';
 import Scooterpage from './components/Filter/Scooter/Scooterpage';
 import FilterPage from './components/Filter/Filterpage';
-
-
+import NewsletterSignup from './components/NewsletterSignup';
 
 function App() {
   const [language, setLanguage] = useState("de");
@@ -39,8 +38,8 @@ function App() {
     
 
     </Routes>
-    
-    <Footer/>
+    <NewsletterSignup language={language}/>
+    <Footer language={language}/>
 
     
     

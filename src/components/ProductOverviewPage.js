@@ -9,7 +9,7 @@ import ProductCarousel from "./productPage";
 import AnalogueProductCarousel from "./analogue";
 import Mobileproductpage from "./mobile_productpage";
 import MobileAnalogueProductCarousel from "./mobile_analogue";
-
+import NewsletterSignup from "./NewsletterSignup";
 import "../assets/css/style.css";
 
 
@@ -143,29 +143,13 @@ export default function Product_overview_page({language}){
     </div>
   </section>
 
-  <ContactForm/>
+  <ContactForm language={language}/>
 
 
 
 
 
 
-  <section className="newsletter-section">
-    <div className="container">
-      <div className="d-flex justify-content-between align-items-center">
-        <div className="text-content">
-          <h4>
-            <i className="bi bi-newspaper" /> Jetzt zum Newsletter anmelden und am laufenden bleibenEvery
-          </h4>
-        </div>
-        <div className="action-btn">
-          <a href="#" className="btn btn-link bg-white text-dark">
-            <i className="bi bi-arrow-right" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
   
  
 </>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../assets/css/test.css";
+
 
 const FilterPage = ({ language }) => {
   const navigate = useNavigate();
@@ -200,23 +200,7 @@ const FilterPage = ({ language }) => {
           ))}
         </div>
       </div>
-      <section className="newsletter-section">
-        <div className="container">
-          <div className="d-flex justify-content-between align-items-center">
-            <div className="text-content">
-              <h4>
-                <i className="bi bi-newspaper" /> Jetzt zum Newsletter anmelden
-                und am laufenden bleibenEvery
-              </h4>
-            </div>
-            <div className="action-btn">
-              <a href="#" className="btn btn-link bg-white text-dark">
-                <i className="bi bi-arrow-right" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };
