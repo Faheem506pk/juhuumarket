@@ -1,13 +1,36 @@
-//Footer.js
+// Footer.js
 
 import { Link, useLocation } from "react-router-dom";
 
 export default function Footer({language}) {
   const location = useLocation();
 
+  // Define variables for text in different languages
+  let communityText, importantText, partnerText, conditionsText, dataProtectionText, imprintText, apkDownloadText;
+
+  if (language === "en") {
+    communityText = "Become part of the community!";
+    importantText = "IMPORTANT";
+    partnerText = "PARTNER FROM";
+    conditionsText = "Conditions";
+    dataProtectionText = "Data protection";
+    imprintText = "Imprint";
+    apkDownloadText = "Download APK";
+  } else if (language === "de") {
+    communityText = "Werde Teil der Community!";
+    importantText = "WICHTIGES";
+    partnerText = "PARTNER VON";
+    conditionsText = "AGB";
+    dataProtectionText = "Datenschutz";
+    imprintText = "Impressum";
+    apkDownloadText = "APK herunterladen";
+  }
+
+  // Get current year
+  const currentYear = new Date().getFullYear();
+
   return (
     <>
-    
     <div className="containerfooter container-fluid p-0">
     <div className="container-fluid p-0 ">
       {/* Footer */}
@@ -35,7 +58,7 @@ export default function Footer({language}) {
                   className="mb-4 mt-0 d-inline-block mx-auto"
                   style={{ width: 60, backgroundColor: "#7c4dff", height: 2 }}
                 />
-                <p id="home-footer-p">Werde Teil der Community!</p>
+                <p id="home-footer-p">{communityText}</p>
                 <div>
                   <a
                     href="https://www.facebook.com/people/JUHUU-BikeBox/100066980422418/"
@@ -117,7 +140,7 @@ export default function Footer({language}) {
                   style={{ fontSize: 15 }}
                   id="home-footer-h2_2"
                 >
-                  Wichtiges
+                  {importantText}
                 </h2>
                 <hr
                   className="mb-4 mt-0 d-inline-block mx-auto"
@@ -128,7 +151,7 @@ export default function Footer({language}) {
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <p id="home-footer-p_1">
-                    <i className="text-black" /> AGB
+                    <i className="text-black" /> {conditionsText}
                   </p>
                 </a>
                 <a
@@ -136,7 +159,7 @@ export default function Footer({language}) {
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <p id="home-footer-p_2">
-                    <i className="text-black" /> Datenschutz
+                    <i className="text-black" /> {dataProtectionText}
                   </p>
                 </a>
                 <a
@@ -144,7 +167,7 @@ export default function Footer({language}) {
                   style={{ textDecoration: "none", color: "black" }}
                 >
                   <p id="home-footer-p_3">
-                    <i className="text-black" /> Impressum
+                    <i className="text-black" /> {imprintText}
                   </p>
                 </a>
                 <a
@@ -192,7 +215,7 @@ export default function Footer({language}) {
                 </p>
                 <p className="text-nowrap" id="home-footer-p_5">
                   <a href="https://docs.juhuu.app/apk" className="text-black">
-                    APK herunterladen
+                    {apkDownloadText}
                   </a>
                 </p>
               </div>
@@ -203,7 +226,7 @@ export default function Footer({language}) {
                   style={{ fontSize: 15 }}
                   id="home-footer-h2_4"
                 >
-                  Partner von
+                  {partnerText}
                 </h2>
                 <hr
                   className="mt-0 d-inline-block mx-auto"
@@ -226,7 +249,7 @@ export default function Footer({language}) {
               className="text-left p-3 pb-4 footer"
               style={{ backgroundColor: "#f3e8fa" }}
             >
-              © <span id="copyright-year">2024</span> Copyright: JUHUU Bikebox
+              © <span id="copyright-year">{currentYear}</span> Copyright: JUHUU Bikebox
               GmbH
               <p className="text-black" href="https://mdbootstrap.com/">
                 Apple, the Apple logo, iPhone, and iPad are trademarks of Apple
@@ -241,8 +264,7 @@ export default function Footer({language}) {
       </footer>
     </div>
   </div>
-    
-    
-    
     </>);
 }
+
+export {};
