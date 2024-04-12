@@ -10,6 +10,7 @@ import { TranslationProvider } from './components/TranslationContext';
 import LanguageSelector from './components/LanguageSelector';
 import Bikepage from './components/Filter/bike/bikepage';
 import Scooterpage from './components/Filter/Scooter/Scooterpage';
+import FilterPage from './components/Filter/Filterpage';
 
 
 
@@ -34,6 +35,7 @@ function App() {
     <Route path="/v1/products/:categoryType/:productId" element={<ProductDetailsPage language={language}/>} />
     <Route path="/v1/products/Bike" element={<Bikepage  language={language} />} />
     <Route path="/v1/products/Scooter" element={<Scooterpage  language={language} />} />
+    <Route path="/filter" element={<FilterPage  language={language} />} />
     
 
     </Routes>

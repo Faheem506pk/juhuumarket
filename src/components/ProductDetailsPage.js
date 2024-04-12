@@ -9,6 +9,7 @@ import ModelViewer from "./ModelViewer";
 import "../assets/css/style.css";
 
 const ProductDetailsPage = ({language}) => {
+  
   const { productId, categoryType } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading status
@@ -38,35 +39,28 @@ const ProductDetailsPage = ({language}) => {
     const fetchProduct = async () => {
       try {
         const response = await fetch(
-          `https://api.juhuu.app/v1/products/${productId}`, 
-          
+          `https://api.juhuu.app/v1/products/${productId}`
         );
         const data = await response.json();
         setProduct(data);
-        setIsLoading(false); // Set loading to false when data is fetched
-        console.log(data);
+        setIsLoading(false);
       } catch (error) {
         console.error("Error fetching product:", error);
-        setIsLoading(false); // Set loading to false in case of error
+        setIsLoading(false);
       }
     };
-  
+
     fetchProduct();
   }, [productId]);
-  
 
-  // Render loader if loading
   if (isLoading) {
-    return (
-      <div className="loader-container">
-        <div className="loader"></div>
-      </div>
-    );
+    return <div className="loader-container"><div className="loader"></div></div>;
   }
 
   if (!product) {
     return <div>No data available</div>;
   }
+
 
 
   let breadcrumbText = "";
@@ -77,6 +71,10 @@ const ProductDetailsPage = ({language}) => {
   } else if (categoryType === "Scooter") {
     breadcrumbText = "Scooter";
     breadcrumbLink = "/v1/products/Scooter";
+  }
+  else {
+    breadcrumbText = "Products";
+    breadcrumbLink = "/";
   }
 
 

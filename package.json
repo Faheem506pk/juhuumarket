@@ -4,6 +4,9 @@
   "private": true,
   "proxy": "https://api.juhuu.app",
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.15.15",
     "@react-three/drei": "^9.105.2",
     "@react-three/fiber": "^8.16.1",
     "bootstrap": "^5.3.3",

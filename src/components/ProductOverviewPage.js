@@ -35,7 +35,7 @@ export default function Product_overview_page({language}){
           <li className="breadcrumb-item">
           
             
-              <span>App</span>
+              <span>Products</span>
             
             
           </li>
