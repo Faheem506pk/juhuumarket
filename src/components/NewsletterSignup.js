@@ -73,7 +73,7 @@ const NewsletterSignup = ({ language }) => {
   } = renderLanguageSpecificText();
 
   return (
-    <section className="newsletter-section">
+    <section className="newsletter-section px-2">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-md-6">

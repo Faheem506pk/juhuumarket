@@ -53,13 +53,13 @@ const Scooterpage = ({language}) =>{
         
         <div className="mt-4 d-flex justify-content-center responsive-scrollspy">
           <a
-            className="btn bg-dark text-white btn-lg px-5 mx-2 responsive-scrollspy"
+            className="btn bg-dark text-white btn-lg px-5 mx-2 mb-3 responsive-scrollspy"
             href="#digital"
           >
             Digital
           </a>
           <a
-            className="btn bg-dark text-white btn-lg px-5 mx-2 responsive-scrollspy"
+            className="btn bg-dark text-white btn-lg px-5 mx-2 mb-2 responsive-scrollspy"
             href="#Analogue"
           >
             Analogue

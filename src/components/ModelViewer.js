@@ -8,8 +8,7 @@ function ModelViewer({ src }) {
         <div className="model-viewer-container d-flex justify-content-center pt-0">
 
         
-        <model-viewer
-        className="mt-0 pt-0"
+        <model-viewer className="mt-0 pt-0"
         style={{ height: "500px", width: "500px" }}
           src={src}
           alt="A 3D model of a car"

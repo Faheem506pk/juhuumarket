@@ -74,7 +74,7 @@ export default function Header() {
                 to="https://juhuu.app/"
                 className="nav-link Responsive-li"
               >
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-phone" />
                 </span>{" "}
                 App
@@ -82,7 +82,7 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <a className="nav-link Responsive-li">
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-lock" />
                 </span>
                 Zugangssysteme
@@ -100,7 +100,7 @@ export default function Header() {
                       : "inherit",
                 }}
               >
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-bicycle"></i>
                 </span>{" "}
                 Bike
@@ -118,7 +118,7 @@ export default function Header() {
                       : "inherit",
                 }}
               >
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-scooter"></i>
                 </span>{" "}
                 Scooter
@@ -129,7 +129,7 @@ export default function Header() {
                 to="/"
                 className="nav-link Responsive-li"
               >
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-puzzle"></i>
                 </span>{" "}
                 Sconstige
@@ -142,7 +142,7 @@ export default function Header() {
           
             <li className="nav-item">
               <a href="#" className="nav-link Responsive-li">
-                <span className="icon">
+                <span className="icon d-flex justify-content-center">
                   <i className="bi bi-lightbulb"></i>
                 </span>{" "}
                 Use Cases
@@ -157,7 +157,7 @@ export default function Header() {
                 : "inherit",
           }}
           >
-          <span className="icon">
+          <span className="icon d-flex justify-content-center">
           <i class="bi bi-funnel"></i> 
           </span>{" "}
           Filter
@@ -175,7 +175,7 @@ export default function Header() {
                   className="nav-link"
                   onClick={() => setShowOffcanvas(true)}
                 >
-                  <span className="icon">
+                  <span className="icon d-flex justify-content-center">
                     <i className="bi bi-list active" />
                   </span>{" "}
                   menu

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import "../../assets/css/style.css";
 
 
 const FilterPage = ({ language }) => {
@@ -84,16 +85,16 @@ const FilterPage = ({ language }) => {
   }
 
   return (
-    <div className="mt-5 product-section">
-      <div className="container mt-2 mb-4">
+    <div className="mt-5 product-section px-3">
+      <div className="container mt-2 mb-4 desktop-filters">
         {/* Filter options */}
-        <h2 className="mb-4">Filter Page</h2>
+        <h2 className="mb-4">Filters:</h2>
         <div className="row mb-4">
           {/* Category filter */}
-          <div className="col">
+          <div className="col  d-flex flex-column">
             <h4>Category:</h4>
             {["bike", "car", "scooter", "boat", "moped"].map((category) => (
-              <div key={category} className="form-check form-check-inline">
+              <div key={category} className="form-check form-check-inline my-2">
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -107,10 +108,10 @@ const FilterPage = ({ language }) => {
             ))}
           </div>
           {/* Modality filter */}
-          <div className="col">
+          <div className="col  d-flex flex-column">
             <h4>Modality:</h4>
             {["charge", "store", "share", "wash", "repair"].map((modality) => (
-              <div key={modality} className="form-check form-check-inline">
+              <div key={modality} className="form-check form-check-inline my-2">
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -124,10 +125,10 @@ const FilterPage = ({ language }) => {
             ))}
           </div>
           {/* Sector filter */}
-          <div className="col">
+          <div className="col  d-flex flex-column">
             <h4>Sector:</h4>
             {["tourism", "mobility", "sport"].map((sector) => (
-              <div key={sector} className="form-check form-check-inline">
+              <div key={sector} className="form-check form-check-inline my-2">
                 <input
                   className="form-check-input"
                   type="checkbox"
@@ -141,7 +142,68 @@ const FilterPage = ({ language }) => {
         </div>
         {/* Submit button */}
         <div className="text-center">
-          <button className="btn btn-primary" onClick={handleSubmit}>
+          <button className="btn bg-dark text-white" onClick={handleSubmit}>
+            Apply Filters
+          </button>
+        </div>
+      </div>
+      <div className="container mt-2 mb-4 mobile-filters">
+        {/* Filter options */}
+        <h2 className="mb-4">Filters:</h2>
+        <div className="col mb-4">
+          {/* Category filter */}
+          <div className="col my-3">
+            <h4>Category:</h4>
+            {["bike", "car", "scooter", "boat", "moped"].map((category) => (
+              <div key={category} className="form-check form-check-inline my-2">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  checked={selectedFilters.categoryArray.includes(category)}
+                  onChange={() =>
+                    handleCheckboxChange("categoryArray", category)
+                  }
+                />
+                <label className="form-check-label">{category}</label>
+              </div>
+            ))}
+          </div>
+          {/* Modality filter */}
+          <div className="col my-3">
+            <h4>Modality:</h4>
+            {["charge", "store", "share", "wash", "repair"].map((modality) => (
+              <div key={modality} className="form-check form-check-inline my-2">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  checked={selectedFilters.modalityArray.includes(modality)}
+                  onChange={() =>
+                    handleCheckboxChange("modalityArray", modality)
+                  }
+                />
+                <label className="form-check-label">{modality}</label>
+              </div>
+            ))}
+          </div>
+          {/* Sector filter */}
+          <div className="col my-3">
+            <h4>Sector:</h4>
+            {["tourism", "mobility", "sport"].map((sector) => (
+              <div key={sector} className="form-check form-check-inline my-2">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  checked={selectedFilters.sectorArray.includes(sector)}
+                  onChange={() => handleCheckboxChange("sectorArray", sector)}
+                />
+                <label className="form-check-label">{sector}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Submit button */}
+        <div className="text-center">
+          <button className="btn bg-dark text-white" onClick={handleSubmit}>
             Apply Filters
           </button>
         </div>

@@ -3,7 +3,7 @@
 import React , { useState }from 'react';
 import {  Routes, Route } from 'react-router-dom';
 import ProductOverviewPage from './components/ProductOverviewPage';
-import Header from './components/header';
+import Header from './components/Header';
 import Footer from './components/Footer';
 import ProductDetailsPage from './components/ProductDetailsPage';
 import { TranslationProvider } from './components/TranslationContext';

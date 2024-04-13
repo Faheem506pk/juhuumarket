@@ -10,7 +10,7 @@ const LanguageSelector = ({ onChangeLanguage }) => {
   };
 
   return (
-    <select   value={language} onChange={handleLanguageChange}
+    <select className="btn bg-dark text-white"  value={language} onChange={handleLanguageChange}
     style={{ marginRight: '40px' }}>
       <option value="en">English</option>
       <option value="de">German</option>
