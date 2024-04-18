@@ -729,7 +729,7 @@ label.error {
   }
 }
 
-*{
+.justified-text{
   text-align: justify;
   text-justify: inter-word;
 }

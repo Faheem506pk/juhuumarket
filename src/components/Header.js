@@ -169,7 +169,7 @@ export default function Header() {
               className="Digital-Responsive d-flex flex-column Carousel-responsive"
               id="digital"
             >
-              <li className="nav-item">
+              <li className="nav-item  d-flex justify-content-center">
                 <a
                   href="#"
                   className="nav-link"

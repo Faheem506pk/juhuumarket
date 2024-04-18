@@ -4,20 +4,22 @@ import "../assets/css/style.css";
 function ModelViewer({ src }) {
   return (
     
-      <body className="pt-0">
-        <div className="model-viewer-container d-flex justify-content-center pt-0">
+      <>
+     
 
         
-        <model-viewer className="mt-0 pt-0"
-        style={{ height: "500px", width: "500px" }}
+        <model-viewer className="mt-0 pt-0 container d-flex justify-content-center"
+        style={{ height: "500px", width: "800px" }}
           src={src}
-          alt="A 3D model of a car"
-          shadow-intensity="1"
-          camera-controls
+          alt="Product 3D Model"
+          shadow-intensity="2"
+          camera-controls 
           auto-rotate
           ar
+          camera-orbit="0deg 0deg"
+          
         ></model-viewer>
-        </div>
+        
         <script
           type="module"
           src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
@@ -26,7 +28,7 @@ function ModelViewer({ src }) {
           nomodule
           src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"
         ></script>
-      </body>
+      </>
     
   );
 }

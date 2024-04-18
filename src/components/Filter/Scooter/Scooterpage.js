@@ -59,7 +59,7 @@ const Scooterpage = ({language}) =>{
             Digital
           </a>
           <a
-            className="btn bg-dark text-white btn-lg px-5 mx-2 mb-2 responsive-scrollspy"
+            className="btn bg-dark text-white btn-lg px-5 mx-2 mb-3 responsive-scrollspy"
             href="#Analogue"
           >
             Analogue
@@ -89,7 +89,7 @@ const Scooterpage = ({language}) =>{
           className="scrollspy-example p-3 rounded-2"
           tabIndex={0}
         >
-          <div className="Digital mt-0" id="digital">
+          <div className="Digital mt-0 justified-text" id="digital">
             <h1>Digital</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint
@@ -109,7 +109,7 @@ const Scooterpage = ({language}) =>{
           </div>
 
         
-          <div className="Analogue pt-5 mt-5 " id="Analogue">
+          <div className="Analogue pt-5 mt-5 justified-text" id="Analogue">
             <h1>Analogue</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint

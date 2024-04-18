@@ -42,7 +42,7 @@ export default function Product_overview_page({language}){
           
         </ol>
       </nav>
-      <div className="Beschreibung mt-5">
+      <div className="Beschreibung mt-5 justified-text">
       {/* <Test/> */}
         <h1>Beschreibung</h1>
         <p>
@@ -100,7 +100,7 @@ export default function Product_overview_page({language}){
           className="scrollspy-example p-3 rounded-2"
           tabIndex={0}
         >
-          <div className="Digital mt-0" id="digital">
+          <div className="Digital mt-0 justified-text" id="digital">
             <h1>Digital</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint
@@ -120,7 +120,7 @@ export default function Product_overview_page({language}){
           </div>
 
         
-          <div className="Analogue pt-5 mt-5 " id="Analogue">
+          <div className="Analogue pt-5 mt-5 justified-text" id="Analogue">
             <h1>Analogue</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa sint

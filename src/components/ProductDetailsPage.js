@@ -8,14 +8,14 @@ import ModelViewer from "./ModelViewer";
 
 import "../assets/css/style.css";
 
-const ProductDetailsPage = ({language}) => {
-  
+const ProductDetailsPage = ({ language }) => {
+
   const { productId, categoryType } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading status
   const [expandedText, setExpandedText] = useState({});
   const navigate = useNavigate();
-  
+
 
   const toggleExpand = (index) => {
     setExpandedText((prevState) => ({
@@ -85,7 +85,7 @@ const ProductDetailsPage = ({language}) => {
 
   return (
     <>
-    
+
       <section className="main-product-slider">
         {/* Your main product slider section */}
       </section>
@@ -98,34 +98,33 @@ const ProductDetailsPage = ({language}) => {
                 <a href="https://juhuu.app/">Juhuu</a>
               </li>
               <li className="breadcrumb-item">
-              <a href={breadcrumbLink}>{breadcrumbText}</a>
+                <a href={breadcrumbLink}>{breadcrumbText}</a>
               </li>
               <li className="breadcrumb-item active">
-              {product.product.name}
+                {product.product.name}
               </li>
             </ol>
-          
+
           </nav>
           {/* Product title */}
           <h1 className="h2 product-title">
             <span>{product && product.product.name}</span>
-           
-            
+
+
           </h1>
-        
-           
+
+
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
-      <div id="carouselExampleIndicators3" className="carousel slide container" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators3" className="carousel slide mt-0  container" data-bs-ride="carousel">
         <div className="carousel-inner">
-          {/* Iterate over images */}
           {product.product.bannerImageDark.map((image, index) => (
-            <div className={`carousel-item carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
-              {/* If it's the first item, display 3D model, else display image */}
-              {/* {index === 0 ? (
+            <div className={`carousel-item d-flex justify-content-center carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
+              {/* Conditionally render 3D model or banner image */}
+              {modelSrc ? (
                 <ModelViewer src={modelSrc} />
-              ) : ( */}
+              ) : (
                 <img src={image} className="card-img-top" alt={`Slide ${index}`} />
-              {/* )} */}
+              )}
             </div>
           ))}
         </div>
@@ -174,23 +173,23 @@ const ProductDetailsPage = ({language}) => {
           >
             <div className="section-detail" id="Description">
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 justified-text">
                   <h3>Description</h3>
                   <p>
-                  
-                  {product && product.product.description && product.product.description[language]
-          ? product.product.description[language]
-          : 'Description not available'}
+
+                    {product && product.product.description && product.product.description[language]
+                      ? product.product.description[language]
+                      : 'Description not available'}
                   </p>{" "}
                   {/* Assuming "en" is for English */}
                 </div>
-                <div className="col-md-5">
+                <div className="col-md-5 ms-5">
                   <h3>Highlights</h3>
-                  <ul>
-                  {product && product.product.highlights && product.product.highlights[language]
-          ? product.product.highlights[language]
-          : 'highlights not available'}
-</ul>
+                  <div>
+                    {product && product.product.highlights && product.product.highlights[language]
+                      ? product.product.highlights[language]
+                      : 'No highlights available'}
+                  </div>
 
                 </div>
                 <div className="section-detail mt-5 " id="ProductDataSheets">
@@ -199,133 +198,7 @@ const ProductDetailsPage = ({language}) => {
                     className="accordion"
                     id="accordionPanelsStayOpenExample"
                   >
-                    {/* <div
-                      className="accordion-item"
-                      style={{ borderTop: "none" }}
-                    >
-                      <h2 className="accordion-header accordion-button-h">
-                        <button
-                          className="accordion-button collapsed accordion-button-1"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#product-collapseOne"
-                          aria-expanded="true"
-                          aria-controls="product-collapseOne"
-                        >
-                          Technische Daten
-                        </button>
-                      </h2>
-                      <div
-                        id="product-collapseOne"
-                        className="accordion-collapse collapse "
-                      >
-                        <div className="accordion-body">
-                          <div className=" card bg-light border-0 p-3 mb-4">
-                            <h3>Tragende Konstruktion</h3>
-                            <ul>
-                              <li>
-                                Tragender geschweißter Türrahmen und
-                                Korpusausbildung über Blechbiegeteile
-                              </li>
-                              <li>Verzinkt</li>
-                              <li>
-                                In ausgewählten RAL-Tönen pulverbeschichtet
-                              </li>
-                              <li>Modulare Erweiterungsmöglichkeiten</li>
-                            </ul>
-                          </div>
-                          <div className="row p-3 justify-content-between">
-                            <div className="card bg-light border-0 p-4 mb-4 accordion-child-container">
-                              <h5>Dach</h5>
-                              <h6 className="fw-bold mt-1">Dachaufbau</h6>
-                              <ul>
-                                <li>Pultdach aus Stahlblechen</li>
-                                <li>
-                                  Verzinkt und in ausgewählten RAL-Tönen
-                                  pulverbeschichtet
-                                </li>
-                              </ul>
-                              <h6 className="fw-bold">Dachentwässerung</h6>
-                              <ul>
-                                <li>
-                                  Entwässerung über geneigtes Pultdach, über
-                                  Rückwand oberirdisch abgeleitet
-                                </li>
-                              </ul>
-                            </div>
-                            <div className="card bg-light border-0 p-4 mb-4 ms-auto accordion-child-container">
-                              <h5>Wände</h5>
-                              <h6 className="fw-bold mt-1">Seitenwände</h6>
-                              <ul>
-                                <li>Stahlblech</li>
-                                <li>Verzinkt</li>
-                                <li>
-                                  In ausgewählten RAL-Tönen pulverbeschichtet
-                                </li>
-                                <li>
-                                  Seitenwände mit blickdichter Belüftungsöffnung
-                                  versehen
-                                </li>
-                              </ul>
-                              <h6 className="fw-bold">Tür</h6>
-                              <ul>
-                                <li>
-                                  Öffnung und offen halten der Tür über
-                                  Gasdruckfeder
-                                </li>
-                                <li>
-                                  Tür mit nicht sichtbaren Scharnieren und nicht
-                                  sichtbarer Position des Schlosses
-                                </li>
-                                <li>Türnummer möglich</li>
-                                <li>Türgriff als durchführende Griffleiste</li>
-                              </ul>
-                            </div>
-                          </div>
-                          <div className="row p-3 justify-content-between">
-                            <div className="col-6 card bg-light border-0 p-4 mb-4 accordion-child-container">
-                              <h5>Abmessungen</h5>
-                              <h6 className="fw-bold mt-1">Länge</h6>
-                              <ul>
-                                <li>1140 mm</li>
-                                <li>Grundmodul</li>
-                              </ul>
-                              <h6 className="fw-bold">Tiefe</h6>
-                              <ul>
-                                <li>2800 mm</li>
-                                <li>Grundmodul</li>
-                              </ul>
-                              <h6 className="fw-bold">Höhe</h6>
-                              <ul>
-                                <li>1575 mm</li>
-                                <li>Grundmodul</li>
-                              </ul>
-                              <h6 className="fw-bold">Fahrradeinstellmaß</h6>
-                              <ul>
-                                <li>1005 x 1350 x 2795mm</li>
-                              </ul>
-                            </div>
-                            <div className="col-5 card bg-light border-0 p-4 mb-4 ms-auto accordion-child-container">
-                              <h5>Fundamente</h5>
-                              <h6 className="fw-bold mt-1">
-                                Fundamente / Befestigung
-                              </h6>
-                              <ul>
-                                <li>
-                                  Tragfähiger, ebener Untergrund (z.B.
-                                  Pflasterbelag, Asphalt, Betonplatte…)
-                                </li>
-                              </ul>
-                              <h6 className="fw-bold">Schneelast / Windlast</h6>
-                              <ul>
-                                <li>Schneelast 0,85 kN/m²</li>
-                                <li>Windlast Zone 2</li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
+                   
                     <div className="accordion-item">
                       <h2 className="accordion-header accordion-button-h">
                         <button
@@ -462,7 +335,7 @@ const ProductDetailsPage = ({language}) => {
                             target="_blank"
                             href={product.product.datasheet[language]}
                           >
-                            
+
                             {language === 'en' ? 'Download product data sheet' : language === 'de' ? 'Produktdatenblatt herunterladen' : language === 'fr' ? 'Télécharger la fiche produit' : ''}
                           </a>
                         </div>
@@ -479,7 +352,7 @@ const ProductDetailsPage = ({language}) => {
               <h1>Optional Accessories</h1>
 
               <div className="Carousel-Desktop">
-                <ProductCarousel language={language}/>
+                <ProductCarousel language={language} />
               </div>
               <div
                 className="Digital-Responsive d-flex flex-column Carousel-responsive"
@@ -492,9 +365,9 @@ const ProductDetailsPage = ({language}) => {
         </div>
       </section>
       {/* Contact form section */}
-      <ContactForm language={language}/>
+      <ContactForm language={language} />
       {/* Newsletter section */}
-     
+
     </>
   );
 };
