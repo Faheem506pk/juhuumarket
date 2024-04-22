@@ -81,7 +81,17 @@ const ProductDetailsPage = ({ language }) => {
 
 
   const modelSrc = product.product.model3d;
-
+  const handle3DModelButtonClick = () => {
+    // Check if the model source is available
+    if (modelSrc) {
+      // Open the model source link in a new tab
+      window.open(modelSrc, '_blank');
+    } else {
+      // Handle case when model source is not available
+      console.error('3D model source is not available.');
+      // You can show an alert or any other appropriate feedback to the user
+    }
+  };
 
   return (
     <>
@@ -138,7 +148,9 @@ const ProductDetailsPage = ({ language }) => {
         </button>
       </div>
     </div>
-
+<div className="button">
+  <button type="button" className="btn btn-danger rounded-0"onClick={handle3DModelButtonClick}>Download 3D model</button>
+</div>
         </div>
       </section>
       {/* Product description and details */}
