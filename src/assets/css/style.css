@@ -660,6 +660,12 @@ label.error {
     transform: translateX(50px) !important;
   }
 }
+@media (max-width: 420px) {
+  .Carousel-responsive {
+    width: 60% !important;
+  }
+
+}
 
 @media (min-width: 1100px) {
   .Carousel-responsive-detailpage-main {
@@ -733,3 +739,8 @@ label.error {
   text-align: justify;
   text-justify: inter-word;
 }
+  
+  @media (min-width: 768px) {
+    .highlights {
+  margin-left: 50px !important;  }
+  }

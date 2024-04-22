@@ -115,7 +115,7 @@ const ProductDetailsPage = ({ language }) => {
 
 
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
-      <div id="carouselExampleIndicators3" className="carousel slide mt-0  container" data-bs-ride="carousel">
+      <div id="carouselExampleIndicators3" className="carousel slide mt-0 d-flex justify-content-center container" data-bs-ride="carousel">
         <div className="carousel-inner">
           {product.product.bannerImageDark.map((image, index) => (
             <div className={`carousel-item d-flex justify-content-center carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
@@ -183,7 +183,7 @@ const ProductDetailsPage = ({ language }) => {
                   </p>{" "}
                   {/* Assuming "en" is for English */}
                 </div>
-                <div className="col-md-5 ms-5">
+                <div className="col-md-5 highlights">
                   <h3>Highlights</h3>
                   <div>
                     {product && product.product.highlights && product.product.highlights[language]

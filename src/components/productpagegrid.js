@@ -88,7 +88,7 @@ const Productpagegrid = ({ language }) => {
                   {expandedText[`${index}`] &&
                     <a onClick={() => toggleExpand(`${index}`)} className="btn ">Read Less</a>
                   }
-                  <button onClick={() => handleBuyNow(product.id)} className="btn container-fluid bg-dark mt-2 text-white">For More</button>
+                  <button onClick={() => handleBuyNow(product.id)} className="btn container-fluid bg-dark mt-2 text-white">More</button>
                 </div>
               </div>
             </div>

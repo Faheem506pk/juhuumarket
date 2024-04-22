@@ -77,7 +77,7 @@ const Mobileproductpage = ({ language }) => {
   const chunkedProducts = chunkArray(products, 1);
 
   return (
-    <div id="mobileproductpage" className="carousel slide mt-5 container" data-bs-interval="false">
+    <div id="mobileproductpage" className="carousel d-flex justify-content-center slide mt-5 container" data-bs-interval="false">
       <div className="carousel-inner">
         {chunkedProducts.map((chunk, index) => (
           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
