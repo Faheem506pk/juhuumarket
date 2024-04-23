@@ -234,13 +234,13 @@ const ProductDetailsPage = ({ language }) => {
                               <div className="drawings-wrapper col-md-6">
                                 <figure>
                                   <a
-                                    href="/assets/img/images/produktdaten.jpg"
+                                    href="/assets/img/images/Image_not_available.png"
                                     data-fancybox="drawings"
                                   >
                                     <img
                                       className="img-fluid"
                                       alt="Technische Zeichnung Bike and Ride Box Cargo einstöckig"
-                                      src="/assets/img/images/produktdaten.jpg"
+                                      src="/assets/img/images/Image_not_available.png"
                                       width={725}
                                       height={513}
                                     />

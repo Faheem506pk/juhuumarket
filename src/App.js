@@ -38,7 +38,8 @@ function App() {
     
 
     </Routes>
-    <NewsletterSignup language={language}/>
+    {/* Not Needed at the Moment -> Moritz */}
+    {/*<NewsletterSignup language={language}/>*/}
     <Footer language={language}/>
 
     

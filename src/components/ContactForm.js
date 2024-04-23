@@ -458,7 +458,7 @@ const ContactForm = ({language}) => {
                         <div className="col-md-12">
                           <ReCAPTCHA
                             ref={captchaRef}
-                            sitekey="6Le9wKYpAAAAAI4dcXqJVLEV_HShmhhcttSdYICF"
+                            sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                             size="invisible"
                           />
                         </div>
