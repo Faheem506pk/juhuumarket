@@ -3,34 +3,32 @@ import { useParams } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import ProductCarousel from "./productPage";
 import Mobileproductpage from "./mobile_productpage";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import ModelViewer from "./ModelViewer";
 
 import "../assets/css/style.css";
 
 const ProductDetailsPage = ({ language }) => {
-
   const { productId, categoryType } = useParams();
   const [product, setProduct] = useState(null);
   const [isLoading, setIsLoading] = useState(true); // State to manage loading status
   const [expandedText, setExpandedText] = useState({});
   const navigate = useNavigate();
 
-
   const toggleExpand = (index) => {
     setExpandedText((prevState) => ({
       ...prevState,
-      [index]: !prevState[index]
+      [index]: !prevState[index],
     }));
   };
 
   const limitWords = (text, limit) => {
     if (!text) {
-      return '';
+      return "";
     }
-    const words = text.split(' ');
+    const words = text.split(" ");
     if (words.length > limit) {
-      return words.slice(0, limit).join(' ') + '...';
+      return words.slice(0, limit).join(" ") + "...";
     }
     return text;
   };
@@ -54,14 +52,16 @@ const ProductDetailsPage = ({ language }) => {
   }, [productId]);
 
   if (isLoading) {
-    return <div className="loader-container"><div className="loader"></div></div>;
+    return (
+      <div className="loader-container">
+        <div className="loader"></div>
+      </div>
+    );
   }
 
   if (!product) {
     return <div>No data available</div>;
   }
-
-
 
   let breadcrumbText = "";
   let breadcrumbLink = "";
@@ -71,31 +71,26 @@ const ProductDetailsPage = ({ language }) => {
   } else if (categoryType === "Scooter") {
     breadcrumbText = "Scooter";
     breadcrumbLink = "/v1/products/Scooter";
-  }
-  else {
+  } else {
     breadcrumbText = "Products";
     breadcrumbLink = "/";
   }
-
-
-
 
   const modelSrc = product.product.model3d;
   const handle3DModelButtonClick = () => {
     // Check if the model source is available
     if (modelSrc) {
       // Open the model source link in a new tab
-      window.open(modelSrc, '_blank');
+      window.open(modelSrc, "_blank");
     } else {
       // Handle case when model source is not available
-      console.error('3D model source is not available.');
+      console.error("3D model source is not available.");
       // You can show an alert or any other appropriate feedback to the user
     }
   };
 
   return (
     <>
-
       <section className="main-product-slider">
         {/* Your main product slider section */}
       </section>
@@ -110,47 +105,76 @@ const ProductDetailsPage = ({ language }) => {
               <li className="breadcrumb-item">
                 <a href={breadcrumbLink}>{breadcrumbText}</a>
               </li>
-              <li className="breadcrumb-item active">
-                {product.product.name}
-              </li>
+              <li className="breadcrumb-item active">{product.product.name}</li>
             </ol>
-
           </nav>
           {/* Product title */}
           <h1 className="h2 product-title">
             <span>{product && product.product.name}</span>
-
-
           </h1>
 
-
           <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
-      <div id="carouselExampleIndicators3" className="carousel slide mt-0 d-flex justify-content-center container" data-bs-ride="carousel">
-        <div className="carousel-inner">
-          {product.product.bannerImageDark.map((image, index) => (
-            <div className={`carousel-item d-flex justify-content-center carousel-item-main-img ${index === 0 ? "active" : ""}`} key={index}>
-              {/* Conditionally render 3D model or banner image */}
-              {modelSrc ? (
-                <ModelViewer src={modelSrc} />
-              ) : (
-                <img src={image} className="card-img-top" alt={`Slide ${index}`} />
-              )}
+            <div
+              id="carouselExampleIndicators3"
+              className="carousel slide mt-0 d-flex justify-content-center container"
+              data-bs-ride="carousel"
+            >
+              <div className="carousel-inner">
+                {product.product.bannerImageDark.map((image, index) => (
+                  <div
+                    className={`carousel-item d-flex justify-content-center carousel-item-main-img ${
+                      index === 0 ? "active" : ""
+                    }`}
+                    key={index}
+                  >
+                    {/* Conditionally render 3D model or banner image */}
+                    {modelSrc ? (
+                      <ModelViewer src={modelSrc} />
+                    ) : (
+                      <img
+                        src={image}
+                        className="card-img-top"
+                        alt={`Slide ${index}`}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+              <button
+                className="carousel-control-prev carousel-control-prev-responsive-main"
+                type="button"
+                data-bs-target="#carouselExampleIndicators3"
+                data-bs-slide="prev"
+              >
+                <span
+                  className="bi bi-arrow-left-circle-fill text-black fs-1 rounded-5"
+                  aria-hidden="true"
+                />
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button
+                className="carousel-control-next carousel-control-next-responsive-main"
+                type="button"
+                data-bs-target="#carouselExampleIndicators3"
+                data-bs-slide="next"
+              >
+                <span
+                  className="bi bi-arrow-right-circle-fill text-black fs-1 rounded-5"
+                  aria-hidden="true"
+                />
+                <span className="visually-hidden">Next</span>
+              </button>
             </div>
-          ))}
-        </div>
-        <button className="carousel-control-prev carousel-control-prev-responsive-main" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="prev">
-          <span className="bi bi-arrow-left-circle-fill text-black fs-1 rounded-5" aria-hidden="true" />
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button className="carousel-control-next carousel-control-next-responsive-main" type="button" data-bs-target="#carouselExampleIndicators3" data-bs-slide="next">
-          <span className="bi bi-arrow-right-circle-fill text-black fs-1 rounded-5" aria-hidden="true" />
-          <span className="visually-hidden">Next</span>
-        </button>
-      </div>
-    </div>
-<div className="button">
-  <button type="button" className="btn btn-danger rounded-0"onClick={handle3DModelButtonClick}>Download 3D model</button>
-</div>
+          </div>
+          <div className="button">
+            <button
+              type="button"
+              className="btn btn-danger rounded-0"
+              onClick={handle3DModelButtonClick}
+            >
+              Download 3D model
+            </button>
+          </div>
         </div>
       </section>
       {/* Product description and details */}
@@ -188,21 +212,27 @@ const ProductDetailsPage = ({ language }) => {
                 <div className="col-md-6 justified-text">
                   <h3>Description</h3>
                   <p>
-
-                    {product && product.product.description && product.product.description[language]
+                    {product &&
+                    product.product.description &&
+                    product.product.description[language]
                       ? product.product.description[language]
-                      : 'Description not available'}
+                      : "Description not available"}
                   </p>{" "}
                   {/* Assuming "en" is for English */}
                 </div>
                 <div className="col-md-5 highlights">
                   <h3>Highlights</h3>
-                  <div>
-                    {product && product.product.highlights && product.product.highlights[language]
-                      ? product.product.highlights[language]
-                      : 'No highlights available'}
-                  </div>
-
+                  <ul>
+                    {product &&
+                      product.product.highlightArray &&
+                      product.product.highlightArray.map((highlight, index) => (
+                        <li key={index}>
+                          {highlight[language]
+                            ? highlight[language]
+                            : "No highlights available"}
+                        </li>
+                      ))}
+                  </ul>
                 </div>
                 <div className="section-detail mt-5 " id="ProductDataSheets">
                   <h3 className="ProductDataSheets-1">Produkt Informationen</h3>
@@ -210,7 +240,6 @@ const ProductDetailsPage = ({ language }) => {
                     className="accordion"
                     id="accordionPanelsStayOpenExample"
                   >
-                   
                     <div className="accordion-item">
                       <h2 className="accordion-header accordion-button-h">
                         <button
@@ -347,8 +376,13 @@ const ProductDetailsPage = ({ language }) => {
                             target="_blank"
                             href={product.product.datasheet[language]}
                           >
-
-                            {language === 'en' ? 'Download product data sheet' : language === 'de' ? 'Produktdatenblatt herunterladen' : language === 'fr' ? 'Télécharger la fiche produit' : ''}
+                            {language === "en"
+                              ? "Download product data sheet"
+                              : language === "de"
+                              ? "Produktdatenblatt herunterladen"
+                              : language === "fr"
+                              ? "Télécharger la fiche produit"
+                              : ""}
                           </a>
                         </div>
                       </div>
@@ -379,7 +413,6 @@ const ProductDetailsPage = ({ language }) => {
       {/* Contact form section */}
       <ContactForm language={language} />
       {/* Newsletter section */}
-
     </>
   );
 };
