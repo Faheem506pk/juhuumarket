@@ -131,7 +131,7 @@ const ProductDetailsPage = ({ language }) => {
             
             className="mySwiper"
           >
-            <SwiperSlide> <ModelViewer className="model-viewer" src={modelSrc} /> </SwiperSlide>
+            <ModelViewer className="model-viewer" src={modelSrc} />
             <SwiperSlide> <img src={product.product.bannerImageDark[0]} alt="image" /> </SwiperSlide>
           </Swiper>
           <div className="button-Atrrangment">

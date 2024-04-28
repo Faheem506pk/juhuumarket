@@ -786,3 +786,15 @@ label.error {
   width: 100%;
   height: auto;
 }
+
+.model-viewer-wrapper {
+  width: 100%; /* Ensure the wrapper takes the full width of its container */
+  overflow: hidden; /* Hide any overflow to prevent horizontal scrolling */
+}
+
+.model-viewer-image {
+  width: 100%; /* Ensure the image takes the full width of its container */
+  height: auto; /* Maintain the image's aspect ratio */
+  display: block; /* Ensure the image behaves as a block element */
+  margin: 0 auto; /* Center the image horizontally */
+}
