@@ -55,7 +55,7 @@ const Mobileproductpage = ({ language }) => {
 
     const handleResize = () => {
       setScreenWidth(window.innerWidth);
-      if (window.innerWidth < 800) {
+      if (window.innerWidth < 768) {
         setChunkSize(1);
       } else if (window.innerWidth < 1100) {
         setChunkSize(2);
@@ -98,7 +98,7 @@ const Mobileproductpage = ({ language }) => {
           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
             <div className="row justify-content-center">
               {chunk.map((product, productIndex) => (
-                <div key={productIndex} className={`col-lg-${12 / chunkSize} col-md-${12 / chunkSize}  mycard`}>
+                <div key={productIndex} className={`col-lg-6 col-md-6  col-sm-12 `}>
 
                   <div className="card col mx-1 h-100 d-flex flex-column">
                     <div className="carousel-image">

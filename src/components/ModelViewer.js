@@ -9,7 +9,7 @@ function ModelViewer({ src }) {
 
         
         <model-viewer className="mt-0 pt-0 container d-flex justify-content-center"
-        style={{ height: "500px", width: "800px" }}
+        style={{ height: "auto", width: "100%" }}
           src={src}
           alt="Product 3D Model"
           shadow-intensity="2"

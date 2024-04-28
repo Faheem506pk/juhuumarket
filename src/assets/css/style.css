@@ -781,3 +781,8 @@ label.error {
     --bs-gutter-x: 0px;
 }
 }
+
+.model-viewer {
+  width: 100%;
+  height: auto;
+}
