@@ -1,15 +1,14 @@
-import React, { useState, useEffect  } from 'react';
-import Carousel from 'react-bootstrap/Carousel';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import "../assets/css/style.css";
-
-
 
 const Mobileproductpage = ({ language }) => {
   
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
   const [expandedText, setExpandedText] = useState({});
+  const [chunkSize, setChunkSize] = useState(1); // State for chunk size
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth); // State for screen width
   const navigate = useNavigate();
 
   const handleBuyNow = (productId) => {
@@ -26,9 +25,7 @@ const Mobileproductpage = ({ language }) => {
     }));
   };
 
-  // Function to limit the number of words in text
   const limitWords = (text, limit) => {
-    // Check if text is falsy (null, undefined, empty string, etc.)
     if (!text) {
       return '';
     }
@@ -38,6 +35,7 @@ const Mobileproductpage = ({ language }) => {
     }
     return text;
   };
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -54,9 +52,25 @@ const Mobileproductpage = ({ language }) => {
     };
   
     fetchData();
+
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+      if (window.innerWidth < 800) {
+        setChunkSize(1);
+      } else if (window.innerWidth < 1100) {
+        setChunkSize(2);
+      } else {
+        setChunkSize(3); // Default chunk size for larger screens
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
-  // Render loader if loading
   if (isLoading) {
     return (
       <div className="loader-container">
@@ -64,6 +78,7 @@ const Mobileproductpage = ({ language }) => {
       </div>
     );
   }
+
   const chunkArray = (array, size) => {
     const chunkedArr = [];
     let index = 0;
@@ -74,7 +89,7 @@ const Mobileproductpage = ({ language }) => {
     return chunkedArr;
   };
 
-  const chunkedProducts = chunkArray(products, 1);
+  const chunkedProducts = chunkArray(products, chunkSize);
 
   return (
     <div id="mobileproductpage" className="carousel d-flex justify-content-center slide mt-5 container" data-bs-interval="false">
@@ -83,7 +98,8 @@ const Mobileproductpage = ({ language }) => {
           <div key={index} className={`carousel-item ${index === 0 ? "active" : ""}`}>
             <div className="row justify-content-center">
               {chunk.map((product, productIndex) => (
-                <div key={productIndex} className="col-lg-4 col-md-6">
+                <div key={productIndex} className={`col-lg-${12 / chunkSize} col-md-${12 / chunkSize}  mycard`}>
+
                   <div className="card col mx-1 h-100 d-flex flex-column">
                     <div className="carousel-image">
                       <img src={product.bannerImageDark[0]} className="card-img-top" alt={product.name} />

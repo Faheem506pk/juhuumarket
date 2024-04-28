@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ContactForm from "./ContactForm";
 import ProductCarousel from "./productPage";
 import Mobileproductpage from "./mobile_productpage";
 import { useNavigate } from "react-router-dom";
 import ModelViewer from "./ModelViewer";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
 import "../assets/css/style.css";
+import "../assets/css/swiper-bundle.min.css";
+import 'swiper/css/navigation';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+
+import { Pagination, Navigation } from 'swiper/modules';
 
 const ProductDetailsPage = ({ language }) => {
   const { productId, categoryType } = useParams();
@@ -96,7 +103,6 @@ const ProductDetailsPage = ({ language }) => {
       </section>
       <section className="product-details">
         <div className="container">
-          {/* Breadcrumb navigation */}
           <nav aria-label="breadcrumb">
             <ol className="breadcrumb">
               <li className="breadcrumb-item">
@@ -108,68 +114,39 @@ const ProductDetailsPage = ({ language }) => {
               <li className="breadcrumb-item active">{product.product.name}</li>
             </ol>
           </nav>
-          {/* Product title */}
           <h1 className="h2 product-title">
             <span>{product && product.product.name}</span>
           </h1>
 
-          <div className="Digital-Responsive d-flex flex-column Carousel-responsive-detailpage-main">
-            <div
-              id="carouselExampleIndicators3"
-              className="carousel slide mt-0 d-flex justify-content-center container"
-              data-bs-ride="carousel"
-            >
-              <div className="carousel-inner">
-                {product.product.bannerImageDark.map((image, index) => (
-                  <div
-                    className={`carousel-item d-flex justify-content-center carousel-item-main-img ${
-                      index === 0 ? "active" : ""
-                    }`}
-                    key={index}
-                  >
-                    {/* Conditionally render 3D model or banner image */}
-                    {modelSrc ? (
-                      <ModelViewer src={modelSrc} />
-                    ) : (
-                      <img
-                        src={image}
-                        className="card-img-top"
-                        alt={`Slide ${index}`}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-              <button
-                className="carousel-control-prev carousel-control-prev-responsive-main"
-                type="button"
-                data-bs-target="#carouselExampleIndicators3"
-                data-bs-slide="prev"
-              >
-                <span
-                  className="bi bi-arrow-left-circle-fill text-black fs-1 rounded-5"
-                  aria-hidden="true"
-                />
-                <span className="visually-hidden">Previous</span>
-              </button>
-              <button
-                className="carousel-control-next carousel-control-next-responsive-main"
-                type="button"
-                data-bs-target="#carouselExampleIndicators3"
-                data-bs-slide="next"
-              >
-                <span
-                  className="bi bi-arrow-right-circle-fill text-black fs-1 rounded-5"
-                  aria-hidden="true"
-                />
-                <span className="visually-hidden">Next</span>
-              </button>
+          <Swiper
+          navigation={{
+            nextEl: '.slider-next',
+            prevEl: '.slider-prev',
+          }}
+            pagination={{
+              type: 'fraction',
+            }}
+            
+            modules={[Pagination, Navigation]}
+            
+            className="mySwiper"
+          >
+            <SwiperSlide> <ModelViewer src={modelSrc} /> </SwiperSlide>
+            <SwiperSlide> <img src={product.product.bannerImageDark[0]} alt="image" /> </SwiperSlide>
+          </Swiper>
+          <div className="button-Atrrangment">
+          <div class="slider-nav">
+            <div class="slider-prev"></div>
+            <div class="slider-next"></div>
+            <div class="swiper-scrollbar"></div>
+
             </div>
-          </div>
-          <div className="button">
+         </div>
+          <div className="button text-end mt-2" >
             <button
+            style={{ backgroundColor: "#212529", color: "white" }}
               type="button"
-              className="btn btn-danger rounded-0"
+              className="btn  rounded-3"
               onClick={handle3DModelButtonClick}
             >
               Download 3D model
@@ -222,7 +199,7 @@ const ProductDetailsPage = ({ language }) => {
                 </div>
                 <div className="col-md-5 highlights">
                   <h3>Highlights</h3>
-                  <ul>
+                  <ul className="highlightsUl">
                     {product &&
                       product.product.highlightArray &&
                       product.product.highlightArray.map((highlight, index) => (
@@ -308,12 +285,12 @@ const ProductDetailsPage = ({ language }) => {
                       >
                         <div className="accordion-body">
                           <ul>
-                            <li>Fahrradparker</li>
-                            <li>Kleiderhaken</li>
+                            <li>Not Available</li>
+                            {/* <li>Kleiderhaken</li>
                             <li>Diebstahlsicherung</li>
                             <li>Elektronisches Zugangssystem KINUS</li>
                             <li>Elektronisches Türschloss</li>
-                            <li>Stromübergabe</li>
+                            <li>Stromübergabe</li> */}
                           </ul>
                         </div>
                       </div>
@@ -337,11 +314,11 @@ const ProductDetailsPage = ({ language }) => {
                       >
                         <div className="accordion-body">
                           <ul>
-                            <li>Fahrrad-Reparaturstation</li>
-                            <li>Ladesteckdose</li>
+                            <li>Not Available</li>
+                            {/* <li>Ladesteckdose</li>
                             <li>Dachbegrünung</li>
                             <li>Mechanisches Türschloss</li>
-                            <li>Photovoltaik-Anlage</li>
+                            <li>Photovoltaik-Anlage</li> */}
                           </ul>
                         </div>
                       </div>

@@ -83,10 +83,10 @@ const ContactForm = ({language}) => {
       if (Object.keys(errors).length === 0) {
         // Form is valid, submit data
         await emailjs.sendForm(
-          "service_juhuu",
-          "template_y4kxt0t",
+          "test_service_id",
+          "template_icbiouh",
           e.target,
-          "x1CkM_Xgsx3Yo2puh"
+          "pFiM-j2klEe5Ra2qr"
         );
   
         // Second recipient
